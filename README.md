@@ -1,8 +1,24 @@
 # Inxi.NET
 
-[![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/master) [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=master)](https://travis-ci.org/EoflaOE/Inxi.NET) ![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Inxi.NET?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Inxi.NET/total?color=purple&label=d/l)](https://github.com/EoflaOE/Inxi.NET/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Inxi.NET?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Inxi.NET/releases/latest) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Inxi.NET?color=purple)](https://www.nuget.org/packages/Inxi.NET/)
+![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Inxi.NET?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Inxi.NET/total?color=purple&label=d/l)](https://github.com/EoflaOE/Inxi.NET/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Inxi.NET?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Inxi.NET/releases/latest) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Inxi.NET?color=purple)](https://www.nuget.org/packages/Inxi.NET/)
 
 Inxi.NET is the Linux-only hardware information frontend using Inxi as its backend for getting system information.
+
+Please note that macOS support is very experimental, and a lot of features are not available.
+
+## Build Status
+
+Here are all the CI build status for all Inxi.NET branches.
+
+| Branch                | AppVeyor | Travis CI
+|-----------------------|----------|------------
+| master                | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/master) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=master)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2021.2.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.2.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.2.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.2.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2021.1.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.1.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.1.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.1.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2021.0.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.0.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.0.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.0.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2020.2.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.2.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.2.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.2.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2020.1.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.1.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.1.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.1.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+| v2020.0.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.0.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.0.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.0.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
 
 ## System Requirements
 
@@ -10,7 +26,10 @@ To run any project that use this library, we recommend that you have:
 
 ### Windows systems
 
-We currently don't support Windows systems, but will in the future under a different way of getting system information.
+1. Windows 7 or later (Windows 10 recommended)
+2. .NET Framework 4.5 or later, or .NET Core 2.1 or 3.1, or .NET 5.0
+
+* If your app uses Inxi.NET, uses x86, and uses one of .NET Core 2.1, 3.1, or .NET 5.0, at least a 2.00 GHz processor with SSE2 is required.
 
 ### Linux systems
 
@@ -88,7 +107,7 @@ License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
 ## License
 
     Inxi.NET - .NET Frontend for Inxi
-    Copyright (C) 2020  EoflaOE
+    Copyright (C) 2020-2021  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
