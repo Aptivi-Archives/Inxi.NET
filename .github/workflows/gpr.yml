@@ -21,8 +21,6 @@ jobs:
       run: choco install curl
     - name: MSBuild Installation
       uses: microsoft/setup-msbuild@v1.0.2
-      with:
-        vs-version: '[16.10]'
     - name: Dependency Restoration
       run: nuget restore "Inxi.NET.sln"
     - name: Solution Compilation
