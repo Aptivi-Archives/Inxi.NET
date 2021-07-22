@@ -8,17 +8,7 @@ Please note that macOS support is very experimental, and a lot of features are n
 
 ## Build Status
 
-Here are all the CI build status for all Inxi.NET branches.
-
-| Branch                | AppVeyor | Travis CI
-|-----------------------|----------|------------
-| master                | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/master) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=master)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2021.2.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.2.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.2.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.2.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2021.1.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.1.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.1.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.1.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2021.0.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2021.0.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2021.0.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2021.0.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2020.2.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.2.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.2.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.2.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2020.1.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.1.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.1.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.1.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
-| v2020.0.x-servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/gnomligr10r5xm44/branch/v2020.0.x-servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/inxi-net/branch/v2020.0.x-servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Inxi.NET.svg?branch=v2020.0.x-servicing)](https://travis-ci.org/EoflaOE/Inxi.NET)
+To look at build statuses for all branches, go to the main branch (master).
 
 ## System Requirements
 
