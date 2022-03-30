@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HardwareParserBase
+   | Inxi.NET API - Eofla Internals </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HardwareParserBase
+   | Inxi.NET API - Eofla Internals ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="InxiFrontend.HardwareParserBase">
+  
+  
+  <h1 id="InxiFrontend_HardwareParserBase" data-uid="InxiFrontend.HardwareParserBase" class="text-break">Class HardwareParserBase
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">HardwareParserBase</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="InxiFrontend.IHardwareParser.html">IHardwareParser</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="InxiFrontend.html">InxiFrontend</a></h6>
+  <h6><strong>Assembly</strong>: Inxi.NET.dll</h6>
+  <h5 id="InxiFrontend_HardwareParserBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HardwareParserBase : IHardwareParser</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseAllLinux_JToken_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseAllLinux(JToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L58">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseAllLinux_" data-uid="InxiFrontend.HardwareParserBase.ParseAllLinux*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseAllLinux_JToken_" data-uid="InxiFrontend.HardwareParserBase.ParseAllLinux(JToken)">ParseAllLinux(JToken)</h4>
+  <div class="markdown level1 summary"><p>The base Linux hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, HardwareBase&gt; ParseAllLinux(JToken InxiToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JToken</span></td>
+        <td><span class="parametername">InxiToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseAllMacOS_NSArray_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L65">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseAllMacOS_" data-uid="InxiFrontend.HardwareParserBase.ParseAllMacOS*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseAllMacOS_NSArray_" data-uid="InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)">ParseAllMacOS(NSArray)</h4>
+  <div class="markdown level1 summary"><p>The base macOS hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, HardwareBase&gt; ParseAllMacOS(NSArray SystemProfilerToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NSArray</span></td>
+        <td><span class="parametername">SystemProfilerToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseAllWindows_ManagementObjectSearcher_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L72">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseAllWindows_" data-uid="InxiFrontend.HardwareParserBase.ParseAllWindows*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseAllWindows_ManagementObjectSearcher_" data-uid="InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)">ParseAllWindows(ManagementObjectSearcher)</h4>
+  <div class="markdown level1 summary"><p>The base Windows hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, HardwareBase&gt; ParseAllWindows(ManagementObjectSearcher WMISearcher)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ManagementObjectSearcher</span></td>
+        <td><span class="parametername">WMISearcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseLinux_JToken_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseLinux(JToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L37">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseLinux_" data-uid="InxiFrontend.HardwareParserBase.ParseLinux*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseLinux_JToken_" data-uid="InxiFrontend.HardwareParserBase.ParseLinux(JToken)">ParseLinux(JToken)</h4>
+  <div class="markdown level1 summary"><p>The base Linux hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HardwareBase ParseLinux(JToken InxiToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JToken</span></td>
+        <td><span class="parametername">InxiToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseMacOS_NSArray_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L44">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseMacOS_" data-uid="InxiFrontend.HardwareParserBase.ParseMacOS*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseMacOS_NSArray_" data-uid="InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)">ParseMacOS(NSArray)</h4>
+  <div class="markdown level1 summary"><p>The base macOS hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HardwareBase ParseMacOS(NSArray SystemProfilerToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NSArray</span></td>
+        <td><span class="parametername">SystemProfilerToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseWindows_ManagementObjectSearcher_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L51">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseWindows_" data-uid="InxiFrontend.HardwareParserBase.ParseWindows*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseWindows_ManagementObjectSearcher_" data-uid="InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)">ParseWindows(ManagementObjectSearcher)</h4>
+  <div class="markdown level1 summary"><p>The base Windows hardware parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HardwareBase ParseWindows(ManagementObjectSearcher WMISearcher)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ManagementObjectSearcher</span></td>
+        <td><span class="parametername">WMISearcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_Parse_JToken_NSArray_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.Parse(JToken%2CNSArray)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L26">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_Parse_" data-uid="InxiFrontend.HardwareParserBase.Parse*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_Parse_JToken_NSArray_" data-uid="InxiFrontend.HardwareParserBase.Parse(JToken,NSArray)">IHardwareParser.Parse(JToken, NSArray)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HardwareBase IHardwareParser.Parse(JToken InxiToken, NSArray SystemProfilerToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JToken</span></td>
+        <td><span class="parametername">InxiToken</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NSArray</span></td>
+        <td><span class="parametername">SystemProfilerToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase_ParseAll_JToken_NSArray_.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase.ParseAll(JToken%2CNSArray)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L30">View Source</a>
+  </span>
+  <a id="InxiFrontend_HardwareParserBase_ParseAll_" data-uid="InxiFrontend.HardwareParserBase.ParseAll*"></a>
+  <h4 id="InxiFrontend_HardwareParserBase_ParseAll_JToken_NSArray_" data-uid="InxiFrontend.HardwareParserBase.ParseAll(JToken,NSArray)">IHardwareParser.ParseAll(JToken, NSArray)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, HardwareBase&gt; IHardwareParser.ParseAll(JToken InxiToken, NSArray SystemProfilerToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JToken</span></td>
+        <td><span class="parametername">InxiToken</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NSArray</span></td>
+        <td><span class="parametername">SystemProfilerToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="InxiFrontend.HardwareBase.html">HardwareBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="InxiFrontend.IHardwareParser.html">IHardwareParser</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EoflaOE/Inxi.NET/new/master/apiSpec/new?filename=InxiFrontend_HardwareParserBase.md&amp;value=---%0Auid%3A%20InxiFrontend.HardwareParserBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/EoflaOE/Inxi.NET/blob/master/Inxi.NET/Base/HardwareParserBase.vb/#L23" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
