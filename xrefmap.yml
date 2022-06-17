@@ -7,6 +7,90 @@ references:
   commentId: N:InxiFrontend
   fullName: InxiFrontend
   nameWithType: InxiFrontend
+- uid: InxiFrontend.Battery
+  name: Battery
+  href: api/InxiFrontend.Battery.html
+  commentId: T:InxiFrontend.Battery
+  fullName: InxiFrontend.Battery
+  nameWithType: Battery
+- uid: InxiFrontend.Battery.Charge
+  name: Charge
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Charge
+  commentId: P:InxiFrontend.Battery.Charge
+  fullName: InxiFrontend.Battery.Charge
+  nameWithType: Battery.Charge
+- uid: InxiFrontend.Battery.Charge*
+  name: Charge
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Charge_
+  commentId: Overload:InxiFrontend.Battery.Charge
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Charge
+  nameWithType: Battery.Charge
+- uid: InxiFrontend.Battery.Condition
+  name: Condition
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Condition
+  commentId: P:InxiFrontend.Battery.Condition
+  fullName: InxiFrontend.Battery.Condition
+  nameWithType: Battery.Condition
+- uid: InxiFrontend.Battery.Condition*
+  name: Condition
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Condition_
+  commentId: Overload:InxiFrontend.Battery.Condition
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Condition
+  nameWithType: Battery.Condition
+- uid: InxiFrontend.Battery.Model
+  name: Model
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Model
+  commentId: P:InxiFrontend.Battery.Model
+  fullName: InxiFrontend.Battery.Model
+  nameWithType: Battery.Model
+- uid: InxiFrontend.Battery.Model*
+  name: Model
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Model_
+  commentId: Overload:InxiFrontend.Battery.Model
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Model
+  nameWithType: Battery.Model
+- uid: InxiFrontend.Battery.Name
+  name: Name
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Name
+  commentId: P:InxiFrontend.Battery.Name
+  fullName: InxiFrontend.Battery.Name
+  nameWithType: Battery.Name
+- uid: InxiFrontend.Battery.Name*
+  name: Name
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Name_
+  commentId: Overload:InxiFrontend.Battery.Name
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Name
+  nameWithType: Battery.Name
+- uid: InxiFrontend.Battery.Status
+  name: Status
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Status
+  commentId: P:InxiFrontend.Battery.Status
+  fullName: InxiFrontend.Battery.Status
+  nameWithType: Battery.Status
+- uid: InxiFrontend.Battery.Status*
+  name: Status
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Status_
+  commentId: Overload:InxiFrontend.Battery.Status
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Status
+  nameWithType: Battery.Status
+- uid: InxiFrontend.Battery.Volts
+  name: Volts
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Volts
+  commentId: P:InxiFrontend.Battery.Volts
+  fullName: InxiFrontend.Battery.Volts
+  nameWithType: Battery.Volts
+- uid: InxiFrontend.Battery.Volts*
+  name: Volts
+  href: api/InxiFrontend.Battery.html#InxiFrontend_Battery_Volts_
+  commentId: Overload:InxiFrontend.Battery.Volts
+  isSpec: "True"
+  fullName: InxiFrontend.Battery.Volts
+  nameWithType: Battery.Volts
 - uid: InxiFrontend.BIOS
   name: BIOS
   href: api/InxiFrontend.BIOS.html
@@ -271,6 +355,12 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareInfo.HardwareInfo
   nameWithType: HardwareInfo.HardwareInfo
+- uid: InxiFrontend.HardwareInfo.Battery
+  name: Battery
+  href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_Battery
+  commentId: F:InxiFrontend.HardwareInfo.Battery
+  fullName: InxiFrontend.HardwareInfo.Battery
+  nameWithType: HardwareInfo.Battery
 - uid: InxiFrontend.HardwareInfo.BIOS
   name: BIOS
   href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_BIOS
@@ -401,6 +491,64 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS
   nameWithType: HardwareParserBase.ParseAllMacOS
+- uid: InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
+  name: IHardwareParser.ParseAllToList(JToken, NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_JToken_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
+  name.vb: ParseAllToList(JToken, NSArray)
+  fullName: InxiFrontend.HardwareParserBase.InxiFrontend.IHardwareParser.ParseAllToList(JToken, NSArray)
+  fullName.vb: InxiFrontend.HardwareParserBase.ParseAllToList(JToken, NSArray)
+  nameWithType: HardwareParserBase.IHardwareParser.ParseAllToList(JToken, NSArray)
+  nameWithType.vb: HardwareParserBase.ParseAllToList(JToken, NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToList*
+  name: IHardwareParser.ParseAllToList
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_
+  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllToList
+  isSpec: "True"
+  name.vb: ParseAllToList
+  fullName: InxiFrontend.HardwareParserBase.InxiFrontend.IHardwareParser.ParseAllToList
+  fullName.vb: InxiFrontend.HardwareParserBase.ParseAllToList
+  nameWithType: HardwareParserBase.IHardwareParser.ParseAllToList
+  nameWithType.vb: HardwareParserBase.ParseAllToList
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
+  name: ParseAllToListLinux(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListLinux_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
+  nameWithType: HardwareParserBase.ParseAllToListLinux(JToken)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListLinux*
+  name: ParseAllToListLinux
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListLinux_
+  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllToListLinux
+  isSpec: "True"
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux
+  nameWithType: HardwareParserBase.ParseAllToListLinux
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
+  name: ParseAllToListMacOS(NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
+  nameWithType: HardwareParserBase.ParseAllToListMacOS(NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS*
+  name: ParseAllToListMacOS
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_
+  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllToListMacOS
+  isSpec: "True"
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS
+  nameWithType: HardwareParserBase.ParseAllToListMacOS
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+  name: ParseAllToListWindows(ManagementObjectSearcher)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListWindows_ManagementObjectSearcher_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+  nameWithType: HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows*
+  name: ParseAllToListWindows
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListWindows_
+  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllToListWindows
+  isSpec: "True"
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListWindows
+  nameWithType: HardwareParserBase.ParseAllToListWindows
 - uid: InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)
   name: ParseAllWindows(ManagementObjectSearcher)
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllWindows_ManagementObjectSearcher_
@@ -485,6 +633,19 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.IHardwareParser.ParseAll
   nameWithType: IHardwareParser.ParseAll
+- uid: InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
+  name: ParseAllToList(JToken, NSArray)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_JToken_NSArray_
+  commentId: M:InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
+  fullName: InxiFrontend.IHardwareParser.ParseAllToList(JToken, NSArray)
+  nameWithType: IHardwareParser.ParseAllToList(JToken, NSArray)
+- uid: InxiFrontend.IHardwareParser.ParseAllToList*
+  name: ParseAllToList
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_
+  commentId: Overload:InxiFrontend.IHardwareParser.ParseAllToList
+  isSpec: "True"
+  fullName: InxiFrontend.IHardwareParser.ParseAllToList
+  nameWithType: IHardwareParser.ParseAllToList
 - uid: InxiFrontend.Inxi
   name: Inxi
   href: api/InxiFrontend.Inxi.html
@@ -528,6 +689,12 @@ references:
   commentId: T:InxiFrontend.InxiHardwareType
   fullName: InxiFrontend.InxiHardwareType
   nameWithType: InxiHardwareType
+- uid: InxiFrontend.InxiHardwareType.Battery
+  name: Battery
+  href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_Battery
+  commentId: F:InxiFrontend.InxiHardwareType.Battery
+  fullName: InxiFrontend.InxiHardwareType.Battery
+  nameWithType: InxiHardwareType.Battery
 - uid: InxiFrontend.InxiHardwareType.BIOS
   name: BIOS
   href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_BIOS

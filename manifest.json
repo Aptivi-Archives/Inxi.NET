@@ -26,6 +26,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/InxiFrontend.Battery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InxiFrontend.Battery.html",
+          "hash": "YFfy961EzyPgulXarsmZE/4ULEeB4X26o/Z7quiOqXc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/InxiFrontend.Graphics.yml",
       "output": {
         ".html": {
@@ -54,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareBase.html",
-          "hash": "GEb1y2JcUGrIMXJVO3R1fAjWcGuzwEiC/IeyrM9oR9Q="
+          "hash": "ic7dQILIiym0+ub3+xUl1fJi8JOGeVfFkGtXOu0V/pM="
         }
       },
       "is_incremental": false,
@@ -66,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareInfo.html",
-          "hash": "46XC+lgnvSQJeEZyrCD9fquqLHORfSJ9zRD/hZUMLKo="
+          "hash": "QcQf0mCUZdLYJfpPGA+VVpKZWiLFH7k1nj5sQLFEGss="
         }
       },
       "is_incremental": false,
@@ -78,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareParserBase.html",
-          "hash": "3umtMIRIfvkY0wIq0/oDDTB1dQyziBCuD2t9HiqRJNA="
+          "hash": "whvttlNVjzlYMEyYv33m1hS34wulj4rlaZKlmJ6SJeU="
         }
       },
       "is_incremental": false,
@@ -90,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.IHardwareParser.html",
-          "hash": "FOFy2yI/p/Wn7wu6oh7XnSq2O2bcRjZMsNcvdND3Ztc="
+          "hash": "vGktYsJt8LTbxRhCANC1hAt8TLPdR1N5S8D8hEru71U="
         }
       },
       "is_incremental": false,
@@ -114,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiHardwareType.html",
-          "hash": "zJu8lZBSiCR/E5uVXXG8sjaF4FfeHTgNttoGSZC1O9I="
+          "hash": "QVUbpFYCWW3tavyAo1I+ZjAOdOoZWT2ZZf/hZBsJbjc="
         }
       },
       "is_incremental": false,
@@ -234,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.html",
-          "hash": "CZvRXWIDfxG5pry5q8ZxErQ6hhySE6revf8oaaj96K4="
+          "hash": "1/Jzizy+vIVqnd4FnkafDd0+gs8Jl2X7zlOaVQ07mbs="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2Ath+yUyHrUxTkfGNHqntPWMm5f4yY4EAhKJQH8rXR8="
+          "hash": "/OX7qPfXZGw+YTsOn+SAGKT2tTInfZiYUm2cV9ehdos="
         }
       },
       "is_incremental": false,
@@ -297,7 +309,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 19,
+          "total_file_count": 20,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
