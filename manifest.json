@@ -30,7 +30,31 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "YRmnFoPaOxFl2evu6LXNr5JoBn/n1MdrdBX1LzjfM34="
+          "hash": "Jowyw4ZvQ8f/VVB2ck8Nv8zqBoJ12dUo+PlhWLcTSKo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "wiki/Home.md",
+      "output": {
+        ".html": {
+          "relative_path": "wiki/Home.html",
+          "hash": "tqpkX5NvZJU2/KCXDA1VeeKsCJfAeWpwSZcKaEQOOVM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "wiki/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "wiki/toc.html",
+          "hash": "8XhClbHlTgh1+ZSX9+c3vPIRpyjSJs6z0ejeP9oVS1M="
         }
       },
       "is_incremental": false,
@@ -51,7 +75,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 1,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
