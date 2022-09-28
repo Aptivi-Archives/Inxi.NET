@@ -466,19 +466,6 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllLinux
   nameWithType: HardwareParserBase.ParseAllLinux
-- uid: InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
-  name: ParseAllMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
-  nameWithType: HardwareParserBase.ParseAllMacOS(NSArray)
-- uid: InxiFrontend.HardwareParserBase.ParseAllMacOS*
-  name: ParseAllMacOS
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllMacOS_
-  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllMacOS
-  isSpec: "True"
-  fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS
-  nameWithType: HardwareParserBase.ParseAllMacOS
 - uid: InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
   name: ParseAllToList(JToken, NSArray)
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_JToken_NSArray_
@@ -505,19 +492,6 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux
   nameWithType: HardwareParserBase.ParseAllToListLinux
-- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
-  name: ParseAllToListMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
-  nameWithType: HardwareParserBase.ParseAllToListMacOS(NSArray)
-- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS*
-  name: ParseAllToListMacOS
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_
-  commentId: Overload:InxiFrontend.HardwareParserBase.ParseAllToListMacOS
-  isSpec: "True"
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS
-  nameWithType: HardwareParserBase.ParseAllToListMacOS
 - uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
   name: ParseAllToListWindows(ManagementObjectSearcher)
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListWindows_ManagementObjectSearcher_
@@ -557,19 +531,6 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseLinux
   nameWithType: HardwareParserBase.ParseLinux
-- uid: InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
-  name: ParseMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
-  nameWithType: HardwareParserBase.ParseMacOS(NSArray)
-- uid: InxiFrontend.HardwareParserBase.ParseMacOS*
-  name: ParseMacOS
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseMacOS_
-  commentId: Overload:InxiFrontend.HardwareParserBase.ParseMacOS
-  isSpec: "True"
-  fullName: InxiFrontend.HardwareParserBase.ParseMacOS
-  nameWithType: HardwareParserBase.ParseMacOS
 - uid: InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)
   name: ParseWindows(ManagementObjectSearcher)
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseWindows_ManagementObjectSearcher_
