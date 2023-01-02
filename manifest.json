@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.BIOS.html",
-          "hash": "ahjDqBJvm0HGptErZ0K3BdMEnJQWTmUFr/nq/59Ezkc="
+          "hash": "PzQv0GEjmnilIGTFg0Tey6SsqynmCBAkj1GBeOttrrQ="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Battery.html",
-          "hash": "p91Mv7aG0WYadMvnQNvI0YjluFy/uR6dvMBEfub1Yso="
+          "hash": "gebUSCa2GHz2mxydecrv5jZp+VhwYO/5GWJLXV99n+s="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Graphics.html",
-          "hash": "FB4RhLVyp4mwij/r98ZaTdrZ11WXU4srzpRX5KfKjLw="
+          "hash": "YYnRyja1uhs8kuxB4eTFtbvuyew4TYL9K/p7IxyWmNo="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardDrive.html",
-          "hash": "7qGG6fmWgRHFeB2Tsq7PQv4nXYJK7pKCAQFmqHu/JqQ="
+          "hash": "n1UvMv1xTpqRU8PsmwqKV5YoPcBsyblj6dYSM+n+FmQ="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareBase.html",
-          "hash": "sj1AO75rS1KxvarMB4eT+uZTzKH/pBLfEK3Ed9ihd44="
+          "hash": "Ih0VxKY0CIdwWiahlvXAG0LS+gMPmixmIbHA46V9mCg="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareInfo.html",
-          "hash": "cC96+lBmgbhZkqqIiZLNFUF1mOn/EEe+tZaKlCTWPVA="
+          "hash": "UpjshcSmGOiZRkWEm2xlYlkkHS1jARMUAKoMv7YB7cw="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareParserBase.html",
-          "hash": "5twTdKGDFaYn94+/lbEWs1rXFIccNcVIjrbFYLGvC6s="
+          "hash": "502Z6HRdc2VU5NE1XY9osUe25vtPF+RUIv/g6Nc3hp8="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.IHardwareParser.html",
-          "hash": "5nO7iUuJ8KBCmWG56tG2HB8Tq63DrG7XceiPxO6B9S8="
+          "hash": "Z4FMRoJLTBCUxAbYQXaxcPvPvIWl1GjV4/HfdwjAets="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Inxi.html",
-          "hash": "o3QOGt8YEugcjVmEVIgajphtUjJo+gMPlGMjPsDdEqk="
+          "hash": "ocHh2NLOx92v/1l8TPykk9xXnFY5uHffTYGIiMd/Zx8="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiHardwareType.html",
-          "hash": "6e3tR/xda9Oite3DjM37wTBc8eCqBZ/rPZnaaV+6Qc8="
+          "hash": "KyJFuI7err9S9mTIP+HsDFkyJwcytbxOR4uVDzyZ61s="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiTrace.DebugDataReceivedEventHandler.html",
-          "hash": "rgOVUBQ5m50YfbsHUh8otsXT7e8a/QLBLcbWkp4ZPpE="
+          "hash": "0T1KE6FRlQ/v6gACP6N9OvCQevs0sd5q1VL8WIuip/A="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiTrace.HardwareParsedEventHandler.html",
-          "hash": "DARyFpRUwbBfk+ZzyLaVT9IipgBY9j2gDTvni4oQY3I="
+          "hash": "Yf2cMEPmaM7H+17IyemnP+NMFERTfr2tMG1BkIN0c84="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiTrace.html",
-          "hash": "ToNZgcjYLFmsbLosGSxnykgmpemB3FeQIOhs+gnxjs0="
+          "hash": "MJF/xzVZumqUZIrPXBUrGltZx8ecs7Da1mqkfkRoF8g="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.MachineInfo.html",
-          "hash": "S/dQXNNif5CuIueTbnUXiPWo0WOGFVGA8BcbXN4aPgk="
+          "hash": "7E25KM7MajCugxkr404yIEXv3uoLl+2u1d4v8+SFZtY="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Network.html",
-          "hash": "APqXVYeae0nHVBC//IxZ6xYMMUt3AizNULem5moyV9A="
+          "hash": "fmFRz49MItgBw/VSARoMg+mBQNiBwh9vlxWtp/ZklIk="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.PCMemory.html",
-          "hash": "T8HZYH4VAsvoya4wY4DXbUmIBM+dbEgIiZzw3pkvVuI="
+          "hash": "acE0FR5AlcO+ZeJP1c10wK5chyUhwEevO8eWthJRSwY="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Partition.html",
-          "hash": "z/4sWCuWixeBvvKwg/4wd9OOSLXrGXW8opvs1i3C7oU="
+          "hash": "BqdY5d8bqI4r7vr0vzbgx7IPnEmTBNE4vRxZXfem5pY="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Processor.html",
-          "hash": "nfjbsdBtzr5Vw8+TD9CuEm4AjVUPq/9n9w3BX8ff3Tc="
+          "hash": "BMgftUO2WlZqKHVN59aTQ+qVxE2cqzSDIxUbu7tqejA="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Sound.html",
-          "hash": "WgoX74haSD9lwsIMZfYXVSIo4Lxp89STpOX5ToZYZ1w="
+          "hash": "PiQqXcQr3N96+BQ1wHDZvAqcyEzrAnegVgN1ztxD7R0="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.SystemInfo.html",
-          "hash": "0Wfx4Fth07q5D3VkVXDok0cs4dPzr6diNsPnpFVRJUc="
+          "hash": "VxC+JLZNUL9asnCHpSXRx0QrYyt7thDlyh//3C3kRAs="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.WindowsLogicalPartition.html",
-          "hash": "mKGVJY2d4iU9s8tFSpKr1xjB+/XHDVVnS4NbU0Jr37Y="
+          "hash": "E9aeTRfIhG2srwfswmD15JFhdMEKcY29WuuQu/4x5GA="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "U8J2fLRj7BuVPDxJAJ88qHFkAud3iJMH2zuBgNhz9E4="
+          "hash": "EQHYGKmVbKTKtdlXfrEovRBwVhEzI98zW6WY1Ln2/og="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "wiki/Home.html",
-          "hash": "DVfWzpQLohEJOP5r8Q9xUE0mTNxSMpuw0fk7buM39G8="
+          "hash": "oGZlddOEI8owWt5ivCM1F/TEMLt048wJc7Btdod/ydM="
         }
       },
       "is_incremental": false,
