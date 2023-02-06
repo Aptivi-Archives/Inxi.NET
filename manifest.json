@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardDrive.html",
-          "hash": "n1UvMv1xTpqRU8PsmwqKV5YoPcBsyblj6dYSM+n+FmQ="
+          "hash": "lEy7tz3UxiaC+tYMxJYDsz9y2PYlNWb462i//ycWh6Q="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareBase.html",
-          "hash": "Ih0VxKY0CIdwWiahlvXAG0LS+gMPmixmIbHA46V9mCg="
+          "hash": "/2ASKrPa5En5ShSudqdZmniHmH8c13KAtvT7zT2fwZI="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareInfo.html",
-          "hash": "UpjshcSmGOiZRkWEm2xlYlkkHS1jARMUAKoMv7YB7cw="
+          "hash": "Rmmq/KDL6oD3IDwS4FoIn9aMvo5Qd2UqKOKM5NwbrVM="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.HardwareParserBase.html",
-          "hash": "502Z6HRdc2VU5NE1XY9osUe25vtPF+RUIv/g6Nc3hp8="
+          "hash": "NMGAvKHZoKBNl2I8SxHKwa7ZtCx3OLk6q8KuqLOH334="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.IHardwareParser.html",
-          "hash": "Z4FMRoJLTBCUxAbYQXaxcPvPvIWl1GjV4/HfdwjAets="
+          "hash": "hHL3NgZDhzd+SwR0/GpMWCZF9W9u6KGy/7B6TQR/qiY="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.Inxi.html",
-          "hash": "ocHh2NLOx92v/1l8TPykk9xXnFY5uHffTYGIiMd/Zx8="
+          "hash": "3VAMJC89CJzgxcCESsKKBnMAhENP9yDBTWhbe46RHEQ="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiHardwareType.html",
-          "hash": "KyJFuI7err9S9mTIP+HsDFkyJwcytbxOR4uVDzyZ61s="
+          "hash": "tqFVeM3np869mcJEoebdAuVxVX8ynA+a7IZ8XnyVoQQ="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InxiFrontend.InxiTrace.html",
-          "hash": "MJF/xzVZumqUZIrPXBUrGltZx8ecs7Da1mqkfkRoF8g="
+          "hash": "cKUNh7Azj3aOZhwf78oQx5u7abO6vI+Dpc+ej8sf5TU="
         }
       },
       "is_incremental": false,

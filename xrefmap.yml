@@ -427,12 +427,12 @@ references:
   commentId: T:InxiFrontend.HardwareParserBase
   fullName: InxiFrontend.HardwareParserBase
   nameWithType: HardwareParserBase
-- uid: InxiFrontend.HardwareParserBase.Parse(JToken,NSArray)
-  name: Parse(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_Parse_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.Parse(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.Parse(JToken, NSArray)
-  nameWithType: HardwareParserBase.Parse(JToken, NSArray)
+- uid: InxiFrontend.HardwareParserBase.Parse(JToken)
+  name: Parse(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_Parse_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.Parse(JToken)
+  fullName: InxiFrontend.HardwareParserBase.Parse(JToken)
+  nameWithType: HardwareParserBase.Parse(JToken)
 - uid: InxiFrontend.HardwareParserBase.Parse*
   name: Parse
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_Parse_
@@ -440,12 +440,12 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.Parse
   nameWithType: HardwareParserBase.Parse
-- uid: InxiFrontend.HardwareParserBase.ParseAll(JToken,NSArray)
-  name: ParseAll(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAll_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAll(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAll(JToken, NSArray)
-  nameWithType: HardwareParserBase.ParseAll(JToken, NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAll(JToken)
+  name: ParseAll(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAll_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAll(JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseAll(JToken)
+  nameWithType: HardwareParserBase.ParseAll(JToken)
 - uid: InxiFrontend.HardwareParserBase.ParseAll*
   name: ParseAll
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAll_
@@ -466,12 +466,12 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllLinux
   nameWithType: HardwareParserBase.ParseAllLinux
-- uid: InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
-  name: ParseAllToList(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToList(JToken, NSArray)
-  nameWithType: HardwareParserBase.ParseAllToList(JToken, NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToList(JToken)
+  name: ParseAllToList(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToList(JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToList(JToken)
+  nameWithType: HardwareParserBase.ParseAllToList(JToken)
 - uid: InxiFrontend.HardwareParserBase.ParseAllToList*
   name: ParseAllToList
   href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_
@@ -550,12 +550,12 @@ references:
   commentId: T:InxiFrontend.IHardwareParser
   fullName: InxiFrontend.IHardwareParser
   nameWithType: IHardwareParser
-- uid: InxiFrontend.IHardwareParser.Parse(JToken,NSArray)
-  name: Parse(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_Parse_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.Parse(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.Parse(JToken, NSArray)
-  nameWithType: IHardwareParser.Parse(JToken, NSArray)
+- uid: InxiFrontend.IHardwareParser.Parse(JToken)
+  name: Parse(JToken)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_Parse_JToken_
+  commentId: M:InxiFrontend.IHardwareParser.Parse(JToken)
+  fullName: InxiFrontend.IHardwareParser.Parse(JToken)
+  nameWithType: IHardwareParser.Parse(JToken)
 - uid: InxiFrontend.IHardwareParser.Parse*
   name: Parse
   href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_Parse_
@@ -563,12 +563,12 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.IHardwareParser.Parse
   nameWithType: IHardwareParser.Parse
-- uid: InxiFrontend.IHardwareParser.ParseAll(JToken,NSArray)
-  name: ParseAll(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAll_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.ParseAll(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.ParseAll(JToken, NSArray)
-  nameWithType: IHardwareParser.ParseAll(JToken, NSArray)
+- uid: InxiFrontend.IHardwareParser.ParseAll(JToken)
+  name: ParseAll(JToken)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAll_JToken_
+  commentId: M:InxiFrontend.IHardwareParser.ParseAll(JToken)
+  fullName: InxiFrontend.IHardwareParser.ParseAll(JToken)
+  nameWithType: IHardwareParser.ParseAll(JToken)
 - uid: InxiFrontend.IHardwareParser.ParseAll*
   name: ParseAll
   href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAll_
@@ -576,12 +576,12 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.IHardwareParser.ParseAll
   nameWithType: IHardwareParser.ParseAll
-- uid: InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
-  name: ParseAllToList(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.ParseAllToList(JToken, NSArray)
-  nameWithType: IHardwareParser.ParseAllToList(JToken, NSArray)
+- uid: InxiFrontend.IHardwareParser.ParseAllToList(JToken)
+  name: ParseAllToList(JToken)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_JToken_
+  commentId: M:InxiFrontend.IHardwareParser.ParseAllToList(JToken)
+  fullName: InxiFrontend.IHardwareParser.ParseAllToList(JToken)
+  nameWithType: IHardwareParser.ParseAllToList(JToken)
 - uid: InxiFrontend.IHardwareParser.ParseAllToList*
   name: ParseAllToList
   href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_
