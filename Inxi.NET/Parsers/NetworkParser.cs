@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Management;
-using Claunia.PropertyList;
 using Extensification.DictionaryExts;
 using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
@@ -34,8 +33,7 @@ namespace InxiFrontend
         /// Parses network cards
         /// </summary>
         /// <param name="InxiToken">Inxi JSON token. Ignored in Windows.</param>
-        /// <param name="SystemProfilerToken">system_profiler token</param>
-        public override Dictionary<string, HardwareBase> ParseAll(JToken InxiToken, NSArray SystemProfilerToken)
+        public override Dictionary<string, HardwareBase> ParseAll(JToken InxiToken)
         {
             Dictionary<string, HardwareBase> NetworkParsed;
 

@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <RootNamespace>InxiFrontend.Tests</RootNamespace>
-    <TargetFrameworks>net48;netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
