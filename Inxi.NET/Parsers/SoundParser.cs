@@ -16,8 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
 using System.Management;
+using System.Xml.Linq;
 using Claunia.PropertyList;
 using Extensification.DictionaryExts;
 using Extensification.External.Newtonsoft.Json.JPropertyExts;
@@ -95,12 +97,41 @@ namespace InxiFrontend
             var SPUParsed = new Dictionary<string, HardwareBase>();
             Sound SPU;
 
-            // TODO: Currently, Inxi.NET adds a dumb device to parsed device. We need actual data. Use "system_profiler SPAudioDataType -xml >> audio.plist" and attach it to Issues
-            // Create an instance of sound class
-            InxiTrace.Debug("TODO: Currently, Inxi.NET adds a dumb device to parsed device. We need actual data. Use \"system_profiler SPAudioDataType -xml >> audio.plist\" and attach it to Issues.");
-            SPU = new Sound("Placeholder", "Aptivi", "SoundParser", "", "");
-            SPUParsed.AddIfNotFound("Placeholder", SPU);
-            InxiTrace.Debug("Added Placeholder to the list of parsed SPUs.");
+            // Check for data type
+            // TODO: Bus ID and Chip ID not implemented in macOS.
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: Bus ID and Chip ID not implemented in macOS.");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPAudioDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPAudioDataType...");
+
+                    // Get information of a drive
+                    NSArray AudioEnum = (NSArray)DataType["_items"];
+                    foreach (NSDictionary AudioDict in AudioEnum)
+                    {
+                        NSArray AudioItemEnum = (NSArray)AudioDict["_items"];
+                        foreach (NSDictionary AudioItemDict in AudioItemEnum)
+                        {
+                            string Name = "";
+                            string Vendor = "";
+                            string Driver = "";
+
+                            // Populate information
+                            Name = (string)AudioItemDict["_name"].ToObject();
+                            Vendor = (string)AudioItemDict["coreaudio_device_manufacturer"].ToObject();
+                            Driver = (string)AudioItemDict["coreaudio_device_transport"].ToObject();
+                            InxiTrace.Debug("Got information. Name: {0}, Vendor: {1}, Driver: {2}", Name, Vendor, Driver);
+
+                            // Create an instance of sound class
+                            SPU = new Sound(Name, Vendor, Driver, "", "");
+                            SPUParsed.AddIfNotFound(Name, SPU);
+                            InxiTrace.Debug("Added Placeholder to the list of parsed SPUs.");
+                        }
+                    }
+                }
+            }
             return SPUParsed;
         }
 

@@ -161,7 +161,7 @@ namespace InxiFrontend
                     InxiTrace.Debug("Enumerating drives...");
                     foreach (NSDictionary DriveDict in DriveEnum)
                     {
-                        string DriveSize = (string)DriveDict["size_in_bytes"].ToObject();
+                        string DriveSize = Convert.ToString(DriveDict["size_in_bytes"].ToObject());
                         string DriveModel = (string)(DriveDict["physical_drive"] as NSDictionary)["device_name"].ToObject();
                         string DriveSerial = (string)DriveDict["volume_uuid"].ToObject();
                         string DriveBsdName = (string)DriveDict["bsd_name"].ToObject();
@@ -169,7 +169,7 @@ namespace InxiFrontend
 
                         // Create an instance of hard drive class
                         Drive = new HardDrive(DriveBsdName, DriveSize, DriveModel, "", "", DriveSerial, DriveParts);
-                        HDDParsed.Add(DriveModel, Drive);
+                        HDDParsed.Add($"[{DriveBsdName}] {DriveModel}", Drive);
                         InxiTrace.Debug("Added {0} to the list of parsed drives.", DriveModel);
                     }
                 }

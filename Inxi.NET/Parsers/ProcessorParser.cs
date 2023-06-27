@@ -131,10 +131,10 @@ namespace InxiFrontend
             string CPURev = "";
             int CPUBogoMips = 0;
 
-            // TODO: L2, L3, and speed only done in macOS
+            // TODO: L2 and speed only done in macOS
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
-            InxiTrace.Debug("TODO: L2, L3, and speed only done in macOS.");
+            InxiTrace.Debug("TODO: L2 and speed only done in macOS.");
             foreach (NSDictionary DataType in SystemProfilerToken)
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
@@ -146,9 +146,8 @@ namespace InxiFrontend
                     foreach (NSDictionary HardwareDict in HardwareEnum)
                     {
                         CPUL2Size = (string)HardwareDict["l2_cache"].ToObject();
-                        CPUL3Size = Convert.ToInt32(HardwareDict["l3_cache"].ToObject().ToString().Replace(" MB", ""));
                         CPUSpeed = (string)HardwareDict["current_processor_speed"].ToObject();
-                        InxiTrace.Debug("Got information. CPUL2Size: {0}, CPUL3Size: {1}, CPUSpeed: {2}", CPUL2Size, CPUL3Size, CPUSpeed);
+                        InxiTrace.Debug("Got information. CPUL2Size: {0}, CPUSpeed: {1}", CPUL2Size, CPUSpeed);
                     }
                 }
             }
