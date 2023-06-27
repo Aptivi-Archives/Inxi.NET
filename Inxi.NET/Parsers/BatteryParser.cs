@@ -40,7 +40,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                Batteries = ParseAllToListLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    Batteries = ParseAllToListMacOS(SystemProfilerToken);
+                else
+                    Batteries = ParseAllToListLinux(InxiToken);
             }
             else
             {
@@ -75,6 +78,20 @@ namespace InxiFrontend
                     Batteries.Add(Battery);
                 }
             }
+
+            return Batteries;
+        }
+
+        public override List<HardwareBase> ParseAllToListMacOS(NSArray SystemProfilerToken)
+        {
+            var Batteries = new List<HardwareBase>();
+
+            // TODO: Battery not implemented in macOS.
+            InxiTrace.Debug("TODO: Battery not implemented in macOS.");
+
+            // Create an instance of battery class
+            var Battery = new Battery("Battery", 100, "", "", "", "Not charging");
+            Batteries.Add(Battery);
 
             return Batteries;
         }

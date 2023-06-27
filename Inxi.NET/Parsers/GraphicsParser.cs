@@ -41,7 +41,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                GPUParsed = ParseAllLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    GPUParsed = ParseAllMacOS(SystemProfilerToken);
+                else
+                    GPUParsed = ParseAllLinux(InxiToken);
             }
             else
             {
@@ -82,6 +85,44 @@ namespace InxiFrontend
                     GPU = new Graphics(GPUName, GPUDriver, GPUDriverVersion, GPUChipID, GPUBusID);
                     GPUParsed.Add(GPUName, GPU);
                     InxiTrace.Debug("Added {0} to the list of parsed GPUs.", GPUName);
+                }
+            }
+            return GPUParsed;
+        }
+
+        public override Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            var GPUParsed = new Dictionary<string, HardwareBase>();
+            Graphics GPU;
+
+            // GPU information fields
+            string GPUName;
+            string GPUChipID;
+
+            // TODO: GPU Driver, bus ID, and driver version not implemented in macOS (maybe kexts (kernel extensions) provide this information)
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: GPU Driver, bus ID, and driver version not implemented in macOS (maybe kexts (kernel extensions) provide this information).");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPDisplaysDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPDisplaysDataType...");
+
+                    // Get information of a graphics card
+                    NSArray GraphicsEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating graphics cards...");
+                    foreach (NSDictionary GraphicsDict in GraphicsEnum)
+                    {
+                        GPUName = (string)GraphicsDict["spdisplays_device-id"].ToObject();
+                        GPUChipID = (string)GraphicsDict["spdisplays_vendor-id"].ToObject();
+                        InxiTrace.Debug("Got information. GPUName: {0}, GPUChipID: {1}", GPUName);
+
+                        // Create an instance of graphics class
+                        GPU = new Graphics(GPUName, "", "", GPUChipID, "");
+                        GPUParsed.Add(GPUName, GPU);
+                        InxiTrace.Debug("Added {0} to the list of parsed GPUs.", GPUName);
+                    }
                 }
             }
             return GPUParsed;

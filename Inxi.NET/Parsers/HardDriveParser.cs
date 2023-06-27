@@ -42,7 +42,10 @@ namespace InxiFrontend
             // If the system is Unix, use Inxi. If on Windows, use WMI. If on macOS, use system_profiler.
             if (InxiInternalUtils.IsUnix())
             {
-                HDDParsed = ParseAllLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    HDDParsed = ParseAllMacOS(SystemProfilerToken);
+                else
+                    HDDParsed = ParseAllLinux(InxiToken);
             }
             else // on Windows
             {
@@ -133,6 +136,43 @@ namespace InxiFrontend
                 }
                 else
                     InxiDriveReady = true;
+            }
+            return HDDParsed;
+        }
+
+        public override Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            var HDDParsed = new Dictionary<string, HardwareBase>();
+            var DriveParts = new Dictionary<string, Partition>();
+            HardDrive Drive;
+
+            // TODO: Drive vendor and speed not implemented in macOS
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: Drive vendor and speed not implemented in macOS");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPStorageDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPStorageDataType...");
+
+                    // Get information of a drive
+                    NSArray DriveEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating drives...");
+                    foreach (NSDictionary DriveDict in DriveEnum)
+                    {
+                        string DriveSize = (string)DriveDict["size_in_bytes"].ToObject();
+                        string DriveModel = (string)(DriveDict["physical_drive"] as NSDictionary)["device_name"].ToObject();
+                        string DriveSerial = (string)DriveDict["volume_uuid"].ToObject();
+                        string DriveBsdName = (string)DriveDict["bsd_name"].ToObject();
+                        InxiTrace.Debug("Got information. DriveSize: {0}, DriveModel: {1}, DriveSerial: {2}, DriveBsdName: {3}", DriveSize, DriveModel, DriveSerial, DriveBsdName);
+
+                        // Create an instance of hard drive class
+                        Drive = new HardDrive(DriveBsdName, DriveSize, DriveModel, "", "", DriveSerial, DriveParts);
+                        HDDParsed.Add(DriveModel, Drive);
+                        InxiTrace.Debug("Added {0} to the list of parsed drives.", DriveModel);
+                    }
+                }
             }
             return HDDParsed;
         }

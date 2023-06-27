@@ -43,7 +43,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                CPUParsed = ParseAllLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    CPUParsed = ParseAllMacOS(SystemProfilerToken);
+                else
+                    CPUParsed = ParseAllLinux(InxiToken);
             }
             else
             {
@@ -101,6 +104,53 @@ namespace InxiFrontend
                 else
                     CPUSpeed = (string)InxiCPU.SelectTokenKeyEndingWith("Speed");
                 InxiTrace.Debug("Got information. CPUName: {0}, CPUTopology: {1}, CPUType: {2}, CPUBits: {3}, CPUMilestone: {4}, CPUL2Size: {5}, CPURev: {6}, CPUFlags: {7}, CPUBogoMips: {8}, CPUSpeed: {9}", CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUL2Size, CPURev, CPUFlags.Length, CPUBogoMips, CPUSpeed);
+            }
+
+            // Create an instance of processor class
+            CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags, CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);
+            CPUParsed.AddIfNotFound(CPUName, CPU);
+            InxiTrace.Debug("Added {0} to the list of parsed processors.", CPUName);
+            return CPUParsed;
+        }
+
+        public override Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            var CPUParsed = new Dictionary<string, HardwareBase>();
+            Processor CPU;
+
+            // CPU information fields
+            string CPUName = "";
+            string CPUTopology = "";
+            string CPUType = "";
+            var CPUBits = default(int);
+            string CPUMilestone = "";
+            var CPUFlags = Array.Empty<string>();
+            string CPUL2Size = "";
+            int CPUL3Size = 0;
+            string CPUSpeed = "";
+            string CPURev = "";
+            int CPUBogoMips = 0;
+
+            // TODO: L2, L3, and speed only done in macOS
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: L2, L3, and speed only done in macOS.");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPHardwareDataType...");
+
+                    // Get information of a drive
+                    NSArray HardwareEnum = (NSArray)DataType["_items"];
+                    foreach (NSDictionary HardwareDict in HardwareEnum)
+                    {
+                        CPUL2Size = (string)HardwareDict["l2_cache"].ToObject();
+                        CPUL3Size = Convert.ToInt32(HardwareDict["l3_cache"].ToObject().ToString().Replace(" MB", ""));
+                        CPUSpeed = (string)HardwareDict["current_processor_speed"].ToObject();
+                        InxiTrace.Debug("Got information. CPUL2Size: {0}, CPUL3Size: {1}, CPUSpeed: {2}", CPUL2Size, CPUL3Size, CPUSpeed);
+                    }
+                }
             }
 
             // Create an instance of processor class

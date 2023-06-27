@@ -39,7 +39,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                MachInfo = ParseLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    MachInfo = ParseMacOS(SystemProfilerToken);
+                else
+                    MachInfo = ParseLinux(InxiToken);
             }
             else
             {
@@ -69,6 +72,41 @@ namespace InxiFrontend
 
                 // Create an instance of system class
                 MachInfo = new MachineInfo(Type, Product, System, Chassis, MoboManufacturer, MoboModel);
+            }
+
+            return MachInfo;
+        }
+
+        public override HardwareBase ParseMacOS(NSArray SystemProfilerToken)
+        {
+            var MachInfo = default(HardwareBase);
+
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPHardwareDataType...");
+
+                    // Get information of a machine
+                    NSArray SoftwareEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating machines...");
+                    foreach (NSDictionary SoftwareDict in SoftwareEnum)
+                    {
+                        // Get information of machine
+                        string Type = SoftwareDict["machine_name"].ToObject().ToString().Contains("MacBook") ? "Laptop" : "Desktop";
+                        string Product = (string)SoftwareDict["machine_name"].ToObject();
+                        string System = "macOS";
+                        string Chassis = "Apple";
+                        string MoboManufacturer = "Apple";
+                        string MoboModel = (string)SoftwareDict["machine_model"].ToObject();
+                        InxiTrace.Debug("Got information. Type: {0}, Product: {1}, System: {2}, Chassis: {3}, MoboManufacturer: {4}, MoboModel: {5}", Type, Product, System, Chassis, MoboManufacturer, MoboModel);
+
+                        // Create an instance of machine class
+                        MachInfo = new MachineInfo(Type, Product, System, Chassis, MoboManufacturer, MoboModel);
+                    }
+                }
             }
 
             return MachInfo;

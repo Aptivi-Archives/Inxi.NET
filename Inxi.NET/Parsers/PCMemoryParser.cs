@@ -38,7 +38,10 @@ namespace InxiFrontend
             PCMemory Mem;
             if (InxiInternalUtils.IsUnix())
             {
-                Mem = (PCMemory)ParseLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    Mem = (PCMemory)ParseMacOS(SystemProfilerToken);
+                else
+                    Mem = (PCMemory)ParseLinux(InxiToken);
             }
             else
             {
@@ -66,6 +69,38 @@ namespace InxiFrontend
 
                 // Create an instance of memory class
                 Mem = new PCMemory(TotalMem, UsedMem, "");
+            }
+
+            return Mem;
+        }
+
+        public override HardwareBase ParseMacOS(NSArray SystemProfilerToken)
+        {
+            var Mem = default(PCMemory);
+
+            // TODO: Used memory and free memory not implemented in macOS.
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: Used memory and free memory not implemented in macOS.");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPHardwareDataType...");
+
+                    // Get information of a memory
+                    NSArray HardwareEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating memory information...");
+                    foreach (NSDictionary HardwareDict in HardwareEnum)
+                    {
+                        // Get information of memory
+                        string TotalMem = (string)HardwareDict["physical_memory"].ToObject();
+                        InxiTrace.Debug("Got information. TotalMem: {0}", TotalMem);
+
+                        // Create an instance of memory class
+                        Mem = new PCMemory(TotalMem, "", "");
+                    }
+                }
             }
 
             return Mem;

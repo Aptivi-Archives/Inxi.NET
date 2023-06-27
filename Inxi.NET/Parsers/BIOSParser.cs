@@ -39,7 +39,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                BIOSInfo = (BIOS)ParseLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    BIOSInfo = (BIOS)ParseMacOS(SystemProfilerToken);
+                else
+                    BIOSInfo = (BIOS)ParseLinux(InxiToken);
             }
             else
             {
@@ -68,6 +71,16 @@ namespace InxiFrontend
                 BIOSInfo = new BIOS(BIOS, Date, Version);
             }
 
+            return BIOSInfo;
+        }
+
+        public override HardwareBase ParseMacOS(NSArray SystemProfilerToken)
+        {
+            BIOS BIOSInfo;
+
+            // TODO: Not implemented.
+            InxiTrace.Debug("TODO: Not implemented");
+            BIOSInfo = new BIOS("Apple", "5/23/2018", "1.0");
             return BIOSInfo;
         }
 

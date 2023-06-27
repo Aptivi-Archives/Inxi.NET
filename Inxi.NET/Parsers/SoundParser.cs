@@ -40,7 +40,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                SPUParsed = ParseAllLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    SPUParsed = ParseAllMacOS(SystemProfilerToken);
+                else
+                    SPUParsed = ParseAllLinux(InxiToken);
             }
             else
             {
@@ -84,6 +87,20 @@ namespace InxiFrontend
                 }
             }
 
+            return SPUParsed;
+        }
+
+        public override Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            var SPUParsed = new Dictionary<string, HardwareBase>();
+            Sound SPU;
+
+            // TODO: Currently, Inxi.NET adds a dumb device to parsed device. We need actual data. Use "system_profiler SPAudioDataType -xml >> audio.plist" and attach it to Issues
+            // Create an instance of sound class
+            InxiTrace.Debug("TODO: Currently, Inxi.NET adds a dumb device to parsed device. We need actual data. Use \"system_profiler SPAudioDataType -xml >> audio.plist\" and attach it to Issues.");
+            SPU = new Sound("Placeholder", "Aptivi", "SoundParser", "", "");
+            SPUParsed.AddIfNotFound("Placeholder", SPU);
+            InxiTrace.Debug("Added Placeholder to the list of parsed SPUs.");
             return SPUParsed;
         }
 

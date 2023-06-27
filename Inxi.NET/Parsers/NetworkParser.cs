@@ -41,7 +41,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                NetworkParsed = ParseAllLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    NetworkParsed = ParseAllMacOS(SystemProfilerToken);
+                else
+                    NetworkParsed = ParseAllLinux(InxiToken);
             }
             else
             {
@@ -121,6 +124,65 @@ namespace InxiFrontend
                     NetChipID = "";
                     NetBusID = "";
                     NetworkCycled = false;
+                }
+            }
+
+            // Return list of network devices
+            return NetworkParsed;
+        }
+
+        public override Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            var NetworkParsed = new Dictionary<string, HardwareBase>();
+            Network Network;
+
+            // Network information fields
+            string NetName = "";
+            string NetDriver = "";
+            string NetDriverVersion = "";
+            string NetDuplex = "";
+            string NetSpeed;
+            string NetState = "";
+            string NetMacAddress;
+            string NetDeviceID;
+            string NetBusID = "";
+            string NetChipID = "";
+
+            // TODO: Name, Driver, DriverVersion, Bus ID, Chip ID, and State not implemented in macOS.
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: Name, Driver, DriverVersion, Bus ID, Chip ID, and State not implemented in macOS.");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPNetworkDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPNetworkDataType...");
+
+                    // Get information of a network adapter
+                    NSArray NetEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating network cards...");
+                    foreach (NSDictionary NetDict in NetEnum)
+                    {
+                        NSDictionary EthernetDict = (NSDictionary)NetDict["Ethernet"];
+                        NSArray EthernetMediaOptions = (NSArray)EthernetDict["MediaOptions"];
+                        foreach (NSObject MediaOption in EthernetMediaOptions)
+                            NetDuplex += MediaOption.ToObject();
+                        NetSpeed = (string)EthernetDict["MediaSubType"].ToObject();
+                        NetMacAddress = (string)EthernetDict["MAC Address"].ToObject();
+                        NetDeviceID = (string)NetDict["interface"].ToObject();
+                        InxiTrace.Debug("Got information. NetName: {0}, NetDriver: {1}, NetDriverVersion: {2}, NetDuplex: {3}, NetSpeed: {4}, NetState: {5}, NetDeviceID: {6}, NetChipID: {7}, NetBusID: {8}", NetName, NetDriver, NetDriverVersion, NetDuplex, NetSpeed, NetState, NetDeviceID, NetChipID, NetBusID);
+
+                        // Create instance of network class
+                        Network = new Network(NetName, NetDriver, NetDriverVersion, NetDuplex, NetSpeed, NetState, NetMacAddress, NetDeviceID, NetChipID, NetBusID);
+                        NetworkParsed.Add(NetName, Network);
+                        InxiTrace.Debug("Added {0} to the list of parsed network cards.", NetName);
+                        NetDuplex = "";
+                        NetSpeed = "";
+                        NetMacAddress = "";
+                        NetDeviceID = "";
+                        NetChipID = "";
+                        NetBusID = "";
+                    }
                 }
             }
 

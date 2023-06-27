@@ -74,6 +74,14 @@ namespace InxiFrontend
         }
 
         /// <summary>
+        /// The base macOS hardware parser
+        /// </summary>
+        public virtual HardwareBase ParseMacOS(NSArray SystemProfilerToken)
+        {
+            throw new NotImplementedException("This hardware parser is not implemented yet on macOS!");
+        }
+
+        /// <summary>
         /// The base Windows hardware parser
         /// </summary>
         public virtual HardwareBase ParseWindows(ManagementObjectSearcher WMISearcher)
@@ -90,6 +98,14 @@ namespace InxiFrontend
         }
 
         /// <summary>
+        /// The base macOS hardware parser
+        /// </summary>
+        public virtual Dictionary<string, HardwareBase> ParseAllMacOS(NSArray SystemProfilerToken)
+        {
+            throw new NotImplementedException("This hardware parser is not implemented yet on macOS!");
+        }
+
+        /// <summary>
         /// The base Windows hardware parser
         /// </summary>
         public virtual Dictionary<string, HardwareBase> ParseAllWindows(ManagementObjectSearcher WMISearcher)
@@ -103,6 +119,14 @@ namespace InxiFrontend
         public virtual List<HardwareBase> ParseAllToListLinux(JToken InxiToken)
         {
             throw new NotImplementedException("This hardware parser is not implemented yet on Linux!");
+        }
+
+        /// <summary>
+        /// The base macOS hardware parser
+        /// </summary>
+        public virtual List<HardwareBase> ParseAllToListMacOS(NSArray SystemProfilerToken)
+        {
+            throw new NotImplementedException("This hardware parser is not implemented yet on macOS!");
         }
 
         /// <summary>

@@ -40,7 +40,10 @@ namespace InxiFrontend
 
             if (InxiInternalUtils.IsUnix())
             {
-                SysInfo = ParseLinux(InxiToken);
+                if (InxiInternalUtils.IsMacOS())
+                    SysInfo = ParseMacOS(SystemProfilerToken);
+                else
+                    SysInfo = ParseLinux(InxiToken);
             }
             else
             {
@@ -72,6 +75,40 @@ namespace InxiFrontend
 
                 // Create an instance of system class
                 SysInfo = new SystemInfo(Hostname, Version, Bits, Distro, DesktopMan, WindowMan, DisplayMan);
+            }
+
+            return SysInfo;
+        }
+
+        public override HardwareBase ParseMacOS(NSArray SystemProfilerToken)
+        {
+            var SysInfo = default(HardwareBase);
+
+            // TODO: Bits, DE, WM, and DM not implemented in macOS.
+            // Check for data type
+            InxiTrace.Debug("Checking for data type...");
+            InxiTrace.Debug("TODO: Bits, DE, WM, and DM not implemented in macOS.");
+            foreach (NSDictionary DataType in SystemProfilerToken)
+            {
+                if ((string)DataType["_dataType"].ToObject() == "SPSoftwareDataType")
+                {
+                    InxiTrace.Debug("DataType found: SPSoftwareDataType...");
+
+                    // Get information of the system
+                    NSArray SoftwareEnum = (NSArray)DataType["_items"];
+                    InxiTrace.Debug("Enumerating system information...");
+                    foreach (NSDictionary SoftwareDict in SoftwareEnum)
+                    {
+                        // Get information of memory
+                        string Hostname = (string)SoftwareDict["local_host_name"].ToObject();
+                        string Version = (string)SoftwareDict["kernel_version"].ToObject();
+                        string Distro = (string)SoftwareDict["os_version"].ToObject();
+                        InxiTrace.Debug("Got information. Hostname: {0}, Version: {1}, Distro: {2}", Hostname, Version, Distro);
+
+                        // Create an instance of system class
+                        SysInfo = new SystemInfo(Hostname, Version, 64, Distro, "", "", "");
+                    }
+                }
             }
 
             return SysInfo;
