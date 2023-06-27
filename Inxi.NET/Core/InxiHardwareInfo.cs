@@ -19,6 +19,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
+using System.Text;
+using Claunia.PropertyList;
 using Extensification.StringExts;
 using Newtonsoft.Json.Linq;
 
@@ -79,6 +81,10 @@ namespace InxiFrontend
         /// Inxi token used for hardware probe
         /// </summary>
         internal JToken InxiToken;
+        /// <summary>
+        /// SystemProfiler token used for hardware probe
+        /// </summary>
+        internal NSArray SystemProfilerToken;
 
         /// <summary>
         /// Initializes a new instance of hardware info
@@ -87,24 +93,47 @@ namespace InxiFrontend
         {
             if (InxiInternalUtils.IsUnix())
             {
-                // Start the Inxi process
-                var InxiProcess = new Process();
-                var InxiProcessInfo = new ProcessStartInfo()
+                if (InxiInternalUtils.IsMacOS())
                 {
-                    FileName = InxiPath,
-                    Arguments = "-Fxx --output json --output-file print",
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    RedirectStandardOutput = true
-                };
-                InxiProcess.StartInfo = InxiProcessInfo;
-                InxiTrace.Debug("Starting inxi with \"-Fxx --output json --output-file print\"...");
-                InxiProcess.Start();
-                InxiProcess.WaitForExit();
-                var lines = InxiProcess.StandardOutput.ReadToEnd().SplitNewLines();
-                InxiToken = JToken.Parse(lines[lines.Length - 1]);
-                InxiTrace.Debug("Token parsed.");
+                    // Start the SystemProfiler process
+                    var SystemProfilerProcess = new Process();
+                    var SystemProfilerProcessInfo = new ProcessStartInfo()
+                    {
+                        FileName = "/usr/sbin/system_profiler",
+                        Arguments = "SPSoftwareDataType SPAudioDataType SPHardwareDataType SPNetworkDataType SPStorageDataType SPDisplaysDataType -xml",
+                        CreateNoWindow = true,
+                        UseShellExecute = false,
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        RedirectStandardOutput = true
+                    };
+                    SystemProfilerProcess.StartInfo = SystemProfilerProcessInfo;
+                    InxiTrace.Debug("Starting system_profiler with \"SPSoftwareDataType SPAudioDataType SPHardwareDataType SPNetworkDataType SPStorageDataType SPDisplaysDataType -xml\"...");
+                    SystemProfilerProcess.Start();
+                    SystemProfilerProcess.WaitForExit(10000);
+                    SystemProfilerToken = (NSArray)PropertyListParser.Parse(Encoding.Default.GetBytes(SystemProfilerProcess.StandardOutput.ReadToEnd()));
+                    InxiTrace.Debug("Token parsed.");
+                }
+                else
+                {
+                    // Start the Inxi process
+                    var InxiProcess = new Process();
+                    var InxiProcessInfo = new ProcessStartInfo()
+                    {
+                        FileName = InxiPath,
+                        Arguments = "-Fxx --output json --output-file print",
+                        CreateNoWindow = true,
+                        UseShellExecute = false,
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        RedirectStandardOutput = true
+                    };
+                    InxiProcess.StartInfo = InxiProcessInfo;
+                    InxiTrace.Debug("Starting inxi with \"-Fxx --output json --output-file print\"...");
+                    InxiProcess.Start();
+                    InxiProcess.WaitForExit();
+                    var lines = InxiProcess.StandardOutput.ReadToEnd().SplitNewLines();
+                    InxiToken = JToken.Parse(lines[lines.Length - 1]);
+                    InxiTrace.Debug("Token parsed.");
+                }
             }
 
             // Ready variables
@@ -125,7 +154,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing HDD...");
                 var BaseParser = new HardDriveParser();
-                HDDParsed = BaseParser.ParseAll(InxiToken);
+                HDDParsed = BaseParser.ParseAll(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.HardDrive);
             }
 
@@ -142,7 +171,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing CPU...");
                 var BaseParser = new ProcessorParser();
-                CPUParsed = BaseParser.ParseAll(InxiToken);
+                CPUParsed = BaseParser.ParseAll(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Processor);
             }
 
@@ -151,7 +180,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing GPU...");
                 var BaseParser = new GraphicsParser();
-                GPUParsed = BaseParser.ParseAll(InxiToken);
+                GPUParsed = BaseParser.ParseAll(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Graphics);
             }
 
@@ -160,7 +189,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing sound...");
                 var BaseParser = new SoundParser();
-                SoundParsed = BaseParser.ParseAll(InxiToken);
+                SoundParsed = BaseParser.ParseAll(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Sound);
             }
 
@@ -169,7 +198,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing network...");
                 var BaseParser = new NetworkParser();
-                NetParsed = BaseParser.ParseAll(InxiToken);
+                NetParsed = BaseParser.ParseAll(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Network);
             }
 
@@ -178,7 +207,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing RAM...");
                 var BaseParser = new PCMemoryParser();
-                RAMParsed = (PCMemory)BaseParser.Parse(InxiToken);
+                RAMParsed = (PCMemory)BaseParser.Parse(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.PCMemory);
             }
 
@@ -187,7 +216,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing BIOS...");
                 var BaseParser = new BIOSParser();
-                BIOSParsed = (BIOS)BaseParser.Parse(InxiToken);
+                BIOSParsed = (BIOS)BaseParser.Parse(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.BIOS);
             }
 
@@ -196,7 +225,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing system...");
                 var BaseParser = new SystemParser();
-                SystemParsed = (SystemInfo)BaseParser.Parse(InxiToken);
+                SystemParsed = (SystemInfo)BaseParser.Parse(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.System);
             }
 
@@ -205,7 +234,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing machine...");
                 var BaseParser = new MachineParser();
-                MachineParsed = (MachineInfo)BaseParser.Parse(InxiToken);
+                MachineParsed = (MachineInfo)BaseParser.Parse(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Machine);
             }
 
@@ -214,7 +243,7 @@ namespace InxiFrontend
             {
                 InxiTrace.Debug("Parsing battery...");
                 var BaseParser = new BatteryParser();
-                BatteryParsed = BaseParser.ParseAllToList(InxiToken);
+                BatteryParsed = BaseParser.ParseAllToList(InxiToken, SystemProfilerToken);
                 InxiTrace.RaiseParsedEvent(InxiHardwareType.Battery);
             }
 

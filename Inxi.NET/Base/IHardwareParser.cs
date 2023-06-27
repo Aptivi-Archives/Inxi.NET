@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using Claunia.PropertyList;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -30,17 +31,17 @@ namespace InxiFrontend
         /// <summary>
         /// The base hardware parser
         /// </summary>
-        HardwareBase Parse(JToken InxiToken);
+        HardwareBase Parse(JToken InxiToken, NSArray SystemProfilerToken);
 
         /// <summary>
         /// The base hardware parser
         /// </summary>
-        Dictionary<string, HardwareBase> ParseAll(JToken InxiToken);
+        Dictionary<string, HardwareBase> ParseAll(JToken InxiToken, NSArray SystemProfilerToken);
 
         /// <summary>
         /// The base hardware parser
         /// </summary>
-        List<HardwareBase> ParseAllToList(JToken InxiToken);
+        List<HardwareBase> ParseAllToList(JToken InxiToken, NSArray SystemProfilerToken);
 
     }
 }

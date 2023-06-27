@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Management;
+using Claunia.PropertyList;
 using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
@@ -32,7 +33,8 @@ namespace InxiFrontend
         /// Parses hard drives
         /// </summary>
         /// <param name="InxiToken">Inxi JSON token. Ignored in Windows.</param>
-        public override Dictionary<string, HardwareBase> ParseAll(JToken InxiToken)
+        /// <param name="SystemProfilerToken">system_profiler token</param>
+        public override Dictionary<string, HardwareBase> ParseAll(JToken InxiToken, NSArray SystemProfilerToken)
         {
             // Variables
             Dictionary<string, HardwareBase> HDDParsed;

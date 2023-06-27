@@ -18,6 +18,7 @@
 
 using System;
 using System.Management;
+using Claunia.PropertyList;
 using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
@@ -31,7 +32,8 @@ namespace InxiFrontend
         /// Parses machine info
         /// </summary>
         /// <param name="InxiToken">Inxi JSON token. Ignored in Windows.</param>
-        public override HardwareBase Parse(JToken InxiToken)
+        /// <param name="SystemProfilerToken">system_profiler token</param>
+        public override HardwareBase Parse(JToken InxiToken, NSArray SystemProfilerToken)
         {
             HardwareBase MachInfo;
 
