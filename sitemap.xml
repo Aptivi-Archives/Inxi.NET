@@ -2,145 +2,145 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Battery.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.BIOS.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Graphics.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.HardDrive.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.HardwareBase.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.HardwareInfo.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.HardwareParserBase.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.IHardwareParser.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Inxi.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.InxiHardwareType.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.InxiTrace.DebugDataReceivedEventHandler.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.InxiTrace.HardwareParsedEventHandler.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.InxiTrace.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.MachineInfo.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Network.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Partition.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.PCMemory.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Processor.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.Sound.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.SystemInfo.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.WindowsLogicalPartition.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/api/InxiFrontend.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/index.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Inxi.NET/wiki/Home.html</loc>
-    <lastmod>2023-03-17T09:07:47+00:00</lastmod>
+    <lastmod>2023-06-27T01:01:34+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
