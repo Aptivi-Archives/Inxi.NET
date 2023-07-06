@@ -59,15 +59,22 @@ namespace InxiFrontend
             var MachInfo = default(HardwareBase);
 
             InxiTrace.Debug("Selecting the Machine token...");
-            foreach (var InxiSys in InxiToken.SelectTokenKeyEndingWith("Machine"))
+            JToken machine = InxiInternalUtils.GetTokenFromInxiToken("Machine", InxiToken);
+            JToken finalProperty = machine;
+            if (machine.Type == JTokenType.Property)
             {
-                // Get information of system
-                string Type = (string)InxiSys.SelectTokenKeyEndingWith("Type");
-                string Product = (string)InxiSys.SelectTokenKeyEndingWith("product");
-                string System = (string)InxiSys.SelectTokenKeyEndingWith("System");
-                string Chassis = (string)InxiSys.SelectTokenKeyEndingWith("Chassis");
-                string MoboManufacturer = (string)InxiSys.SelectTokenKeyEndingWith("Mobo");
-                string MoboModel = (string)InxiSys.SelectTokenKeyEndingWith("model");
+                foreach (var InxiMachine in machine)
+                    finalProperty = InxiMachine;
+            }
+            foreach (var inxiMachine in finalProperty)
+            {
+                // Get information of machine
+                string Type = (string)inxiMachine.SelectTokenKeyEndingWith("Type");
+                string Product = (string)inxiMachine.SelectTokenKeyEndingWith("product");
+                string System = (string)inxiMachine.SelectTokenKeyEndingWith("System");
+                string Chassis = (string)inxiMachine.SelectTokenKeyEndingWith("Chassis");
+                string MoboManufacturer = (string)inxiMachine.SelectTokenKeyEndingWith("Mobo");
+                string MoboModel = (string)inxiMachine.SelectTokenKeyEndingWith("model");
                 InxiTrace.Debug("Got information. Type: {0}, Product: {1}, System: {2}, Chassis: {3}, MoboManufacturer: {4}, MoboModel: {5}", Type, Product, System, Chassis, MoboManufacturer, MoboModel);
 
                 // Create an instance of system class

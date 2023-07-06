@@ -59,18 +59,25 @@ namespace InxiFrontend
             var SysInfo = default(HardwareBase);
 
             InxiTrace.Debug("Selecting the System token...");
-            foreach (var InxiSys in InxiToken.SelectTokenKeyEndingWith("System"))
+            JToken system = InxiInternalUtils.GetTokenFromInxiToken("System", InxiToken);
+            JToken finalProperty = system;
+            if (system.Type == JTokenType.Property)
+            {
+                foreach (var InxiSystem in system)
+                    finalProperty = InxiSystem;
+            }
+            foreach (var inxiSys in finalProperty)
             {
                 // Get information of system
-                string Hostname = (string)InxiSys.SelectTokenKeyEndingWith("Host");
-                string Version = (string)InxiSys.SelectTokenKeyEndingWith("Kernel");
-                int Bits = (int)InxiSys.SelectTokenKeyEndingWith("bits");
-                string Distro = (string)InxiSys.SelectTokenKeyEndingWith("Distro");
-                string DesktopMan = (string)InxiSys.SelectTokenKeyEndingWith("Desktop");
-                string WindowMan = (string)InxiSys.SelectTokenKeyEndingWith("WM");
-                string DisplayMan = (string)InxiSys.SelectTokenKeyEndingWith("dm");
+                string Hostname = (string)inxiSys.SelectTokenKeyEndingWith("Host");
+                string Version = (string)inxiSys.SelectTokenKeyEndingWith("Kernel");
+                int Bits = (int)inxiSys.SelectTokenKeyEndingWith("bits");
+                string Distro = (string)inxiSys.SelectTokenKeyEndingWith("Distro");
+                string DesktopMan = (string)inxiSys.SelectTokenKeyEndingWith("Desktop");
+                string WindowMan = (string)inxiSys.SelectTokenKeyEndingWith("WM");
+                string DisplayMan = (string)inxiSys.SelectTokenKeyEndingWith("dm");
                 if (string.IsNullOrEmpty(WindowMan))
-                    WindowMan = (string)InxiSys.SelectTokenKeyEndingWith("wm");
+                    WindowMan = (string)inxiSys.SelectTokenKeyEndingWith("wm");
                 InxiTrace.Debug("Got information. Hostname: {0}, Version: {1}, Distro: {2}, Bits: {3}, DesktopMan: {4}, WindowMan: {5}, DisplayMan: {6}", Hostname, Version, Distro, Bits, DesktopMan, WindowMan, DisplayMan);
 
                 // Create an instance of system class

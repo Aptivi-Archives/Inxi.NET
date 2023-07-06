@@ -69,16 +69,23 @@ namespace InxiFrontend
             string GPUChipID;
 
             InxiTrace.Debug("Selecting the Graphics token...");
-            foreach (var InxiGPU in InxiToken.SelectTokenKeyEndingWith("Graphics"))
+            JToken gpu = InxiInternalUtils.GetTokenFromInxiToken("Graphics", InxiToken);
+            JToken finalProperty = gpu;
+            if (gpu.Type == JTokenType.Property)
             {
-                if (InxiGPU.SelectTokenKeyEndingWith("Device") is not null)
+                foreach (var InxiGpu in gpu)
+                    finalProperty = InxiGpu;
+            }
+            foreach (var inxiGpu in finalProperty)
+            {
+                if (inxiGpu.SelectTokenKeyEndingWith("Device") is not null)
                 {
                     // Get information of a graphics card
-                    GPUName = (string)InxiGPU.SelectTokenKeyEndingWith("Device");
-                    GPUDriver = (string)InxiGPU.SelectTokenKeyEndingWith("driver");
-                    GPUDriverVersion = (string)InxiGPU.SelectTokenKeyEndingWith("v");
-                    GPUChipID = (string)InxiGPU.SelectTokenKeyEndingWith("chip ID");
-                    GPUBusID = (string)InxiGPU.SelectTokenKeyEndingWith("bus ID");
+                    GPUName = (string)inxiGpu.SelectTokenKeyEndingWith("Device");
+                    GPUDriver = (string)inxiGpu.SelectTokenKeyEndingWith("driver");
+                    GPUDriverVersion = (string)inxiGpu.SelectTokenKeyEndingWith("v");
+                    GPUChipID = (string)inxiGpu.SelectTokenKeyEndingWith("chip ID");
+                    GPUBusID = (string)inxiGpu.SelectTokenKeyEndingWith("bus ID");
                     InxiTrace.Debug("Got information. GPUName: {0}, GPUDriver: {1}, GPUDriverVersion: {2}, GPUChipID: {3}, GPUBusID: {4}", GPUName, GPUDriver, GPUDriverVersion, GPUChipID, GPUBusID);
 
                     // Create an instance of graphics class

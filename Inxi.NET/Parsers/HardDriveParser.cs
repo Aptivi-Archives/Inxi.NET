@@ -69,7 +69,21 @@ namespace InxiFrontend
             InxiTrace.Debug("Selecting the Drives token...");
             var DrvDevChar1 = default(char);
             var CurrDrvChar1 = default(char);
-            foreach (var InxiDrive in InxiToken.SelectTokenKeyEndingWith("Drives"))
+            JToken drives = InxiInternalUtils.GetTokenFromInxiToken("Drives", InxiToken);
+            JToken partitions = InxiInternalUtils.GetTokenFromInxiToken("Partitions", InxiToken);
+            JToken finalProperty = drives;
+            JToken finalPropertyPartitions = partitions;
+            if (drives.Type == JTokenType.Property)
+            {
+                foreach (var InxiDrive in drives)
+                    finalProperty = InxiDrive;
+            }
+            if (finalPropertyPartitions is not null && partitions.Type == JTokenType.Property)
+            {
+                foreach (var InxiPart in partitions)
+                    finalPropertyPartitions = InxiPart;
+            }
+            foreach (var InxiDrive in finalProperty)
             {
                 if (InxiDriveReady)
                 {
@@ -89,10 +103,9 @@ namespace InxiFrontend
 
                     // Get partitions
                     InxiTrace.Debug("Selecting the Partition token...");
-                    var DrivePartToken = InxiToken.SelectTokenKeyEndingWith("Partition");
-                    if (DrivePartToken is not null)
+                    if (finalPropertyPartitions is not null)
                     {
-                        foreach (var DrivePartition in DrivePartToken)
+                        foreach (var DrivePartition in finalPropertyPartitions)
                         {
                             if (DrivePartition.SelectTokenKeyEndingWith("dev") is not null)
                             {

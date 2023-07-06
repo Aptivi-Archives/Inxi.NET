@@ -76,33 +76,40 @@ namespace InxiFrontend
             string NetChipID = "";
 
             InxiTrace.Debug("Selecting the Network token...");
-            foreach (var InxiNetwork in InxiToken.SelectTokenKeyEndingWith("Network"))
+            JToken network = InxiInternalUtils.GetTokenFromInxiToken("Network", InxiToken);
+            JToken finalProperty = network;
+            if (network.Type == JTokenType.Property)
+            {
+                foreach (var InxiNetwork in network)
+                    finalProperty = InxiNetwork;
+            }
+            foreach (var inxiNetwork in finalProperty)
             {
                 // Get information of a network card
-                if (InxiNetwork.SelectTokenKeyEndingWith("Device") is not null)
+                if (inxiNetwork.SelectTokenKeyEndingWith("Device") is not null)
                 {
-                    NetName = (string)InxiNetwork.SelectTokenKeyEndingWith("Device");
-                    if (InxiNetwork.SelectTokenKeyEndingWith("type") is not null & (string)InxiNetwork.SelectTokenKeyEndingWith("type") == "network bridge")
+                    NetName = (string)inxiNetwork.SelectTokenKeyEndingWith("Device");
+                    if (inxiNetwork.SelectTokenKeyEndingWith("type") is not null & (string)inxiNetwork.SelectTokenKeyEndingWith("type") == "network bridge")
                     {
-                        NetDriver = (string)InxiNetwork.SelectTokenKeyEndingWith("driver");
-                        NetDriverVersion = (string)InxiNetwork.SelectTokenKeyEndingWith("v");
+                        NetDriver = (string)inxiNetwork.SelectTokenKeyEndingWith("driver");
+                        NetDriverVersion = (string)inxiNetwork.SelectTokenKeyEndingWith("v");
                         NetworkCycled = true;
                     }
                     else
                     {
-                        NetDriver = (string)InxiNetwork.SelectTokenKeyEndingWith("driver");
-                        NetDriverVersion = (string)InxiNetwork.SelectTokenKeyEndingWith("v");
+                        NetDriver = (string)inxiNetwork.SelectTokenKeyEndingWith("driver");
+                        NetDriverVersion = (string)inxiNetwork.SelectTokenKeyEndingWith("v");
                     }
                 }
-                else if (InxiNetwork.SelectTokenKeyEndingWith("IF") is not null)
+                else if (inxiNetwork.SelectTokenKeyEndingWith("IF") is not null)
                 {
-                    NetDuplex = (string)InxiNetwork.SelectTokenKeyEndingWith("duplex");
-                    NetSpeed = (string)InxiNetwork.SelectTokenKeyEndingWith("speed");
-                    NetState = (string)InxiNetwork.SelectTokenKeyEndingWith("state");
-                    NetMacAddress = (string)InxiNetwork.SelectTokenKeyEndingWith("mac");
-                    NetDeviceID = (string)InxiNetwork.SelectTokenKeyEndingWith("IF");
-                    NetBusID = (string)InxiNetwork.SelectTokenKeyEndingWith("bus ID");
-                    NetChipID = (string)InxiNetwork.SelectTokenKeyEndingWith("chip ID");
+                    NetDuplex = (string)inxiNetwork.SelectTokenKeyEndingWith("duplex");
+                    NetSpeed = (string)inxiNetwork.SelectTokenKeyEndingWith("speed");
+                    NetState = (string)inxiNetwork.SelectTokenKeyEndingWith("state");
+                    NetMacAddress = (string)inxiNetwork.SelectTokenKeyEndingWith("mac");
+                    NetDeviceID = (string)inxiNetwork.SelectTokenKeyEndingWith("IF");
+                    NetBusID = (string)inxiNetwork.SelectTokenKeyEndingWith("bus ID");
+                    NetChipID = (string)inxiNetwork.SelectTokenKeyEndingWith("chip ID");
                     NetworkCycled = true; // Ensures that all info is filled.
                 }
 

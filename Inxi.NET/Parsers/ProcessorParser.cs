@@ -80,31 +80,38 @@ namespace InxiFrontend
             // TODO: L3 cache is not implemented in Linux
             InxiTrace.Debug("TODO: L3 cache is not implemented in Linux.");
             InxiTrace.Debug("Selecting the CPU token...");
-            foreach (var InxiCPU in InxiToken.SelectTokenKeyEndingWith("CPU"))
+            JToken cpu = InxiInternalUtils.GetTokenFromInxiToken("CPU", InxiToken);
+            JToken finalProperty = cpu;
+            if (cpu.Type == JTokenType.Property)
+            {
+                foreach (var InxiCPU in cpu)
+                    finalProperty = InxiCPU;
+            }
+            foreach (var inxiCpu in finalProperty)
             {
                 if (!CPUSpeedReady)
                 {
                     // Get information of a processor
-                    CPUName = (string)InxiCPU.SelectTokenKeyEndingWith("model");
-                    CPUTopology = (string)InxiCPU.SelectTokenKeyEndingWith("Topology");
+                    CPUName = (string)inxiCpu.SelectTokenKeyEndingWith("model");
+                    CPUTopology = (string)inxiCpu.SelectTokenKeyEndingWith("Topology");
                     if (string.IsNullOrEmpty(CPUTopology))
-                        CPUTopology = (string)InxiCPU.SelectTokenKeyEndingWith("Info");
-                    CPUType = (string)InxiCPU.SelectTokenKeyEndingWith("type");
-                    CPUBits = (int)InxiCPU.SelectTokenKeyEndingWith("bits");
-                    CPUMilestone = (string)InxiCPU.SelectTokenKeyEndingWith("arch");
-                    CPUL2Size = (string)InxiCPU.SelectTokenKeyContaining("L2");
-                    CPURev = (string)InxiCPU.SelectTokenKeyEndingWith("rev");
+                        CPUTopology = (string)inxiCpu.SelectTokenKeyEndingWith("Info");
+                    CPUType = (string)inxiCpu.SelectTokenKeyEndingWith("type");
+                    CPUBits = (int)inxiCpu.SelectTokenKeyEndingWith("bits");
+                    CPUMilestone = (string)inxiCpu.SelectTokenKeyEndingWith("arch");
+                    CPUL2Size = (string)inxiCpu.SelectTokenKeyContaining("L2");
+                    CPURev = (string)inxiCpu.SelectTokenKeyEndingWith("rev");
                     CPUSpeedReady = true;
                 }
-                else if (InxiCPU.SelectTokenKeyEndingWith("flags") is not null)
+                else if (inxiCpu.SelectTokenKeyEndingWith("flags") is not null)
                 {
-                    CPUFlags = ((string)InxiCPU.SelectTokenKeyEndingWith("flags")).Split(' ');
-                    CPUBogoMips = (int)InxiCPU.SelectTokenKeyEndingWith("bogomips");
+                    CPUFlags = ((string)inxiCpu.SelectTokenKeyEndingWith("flags")).Split(' ');
+                    CPUBogoMips = (int)inxiCpu.SelectTokenKeyEndingWith("bogomips");
                 }
                 else
-                    CPUSpeed = (string)InxiCPU.SelectTokenKeyEndingWith("Speed");
-                InxiTrace.Debug("Got information. CPUName: {0}, CPUTopology: {1}, CPUType: {2}, CPUBits: {3}, CPUMilestone: {4}, CPUL2Size: {5}, CPURev: {6}, CPUFlags: {7}, CPUBogoMips: {8}, CPUSpeed: {9}", CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUL2Size, CPURev, CPUFlags.Length, CPUBogoMips, CPUSpeed);
+                    CPUSpeed = (string)inxiCpu.SelectTokenKeyEndingWith("Speed");
             }
+            InxiTrace.Debug("Got information. CPUName: {0}, CPUTopology: {1}, CPUType: {2}, CPUBits: {3}, CPUMilestone: {4}, CPUL2Size: {5}, CPURev: {6}, CPUFlags: {7}, CPUBogoMips: {8}, CPUSpeed: {9}", CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUL2Size, CPURev, CPUFlags.Length, CPUBogoMips, CPUSpeed);
 
             // Create an instance of processor class
             CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags, CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);

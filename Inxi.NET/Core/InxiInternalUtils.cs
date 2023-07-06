@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Newtonsoft.Json.Linq;
 using System;
 using UnameNET;
 
@@ -48,6 +49,15 @@ namespace InxiFrontend
             {
                 return false;
             }
+        }
+
+        internal static JToken GetTokenFromInxiToken(string name, JToken InxiToken)
+        {
+            foreach (var token in InxiToken)
+                foreach (var token1 in token)
+                    if (token1.Path.Contains(name))
+                        return token1;
+            return null;
         }
 
     }

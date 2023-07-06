@@ -60,17 +60,24 @@ namespace InxiFrontend
             Battery Battery;
 
             InxiTrace.Debug("Selecting the Battery token...");
-            if (InxiToken.SelectTokenKeyEndingWith("Battery") != null)
+            JToken battery = InxiInternalUtils.GetTokenFromInxiToken("Battery", InxiToken);
+            if (battery != null)
             {
-                foreach (var InxiSys in InxiToken.SelectTokenKeyEndingWith("Battery"))
+                JToken finalProperty = battery;
+                if (battery.Type == JTokenType.Property)
+                {
+                    foreach (var InxiBattery in battery)
+                        finalProperty = InxiBattery;
+                }
+                foreach (var inxiBattery in finalProperty)
                 {
                     // Get information of battery
-                    string Name = (string)InxiSys.SelectTokenKeyEndingWith("ID");
-                    int Charge = Convert.ToInt32(InxiSys.SelectTokenKeyEndingWith("charge").ToString().Replace("%", ""));
-                    string Condition = (string)InxiSys.SelectTokenKeyEndingWith("condition");
-                    string Volts = (string)InxiSys.SelectTokenKeyEndingWith("volts");
-                    string Model = (string)InxiSys.SelectTokenKeyEndingWith("model");
-                    string Status = (string)InxiSys.SelectTokenKeyEndingWith("status");
+                    string Name = (string)inxiBattery.SelectTokenKeyEndingWith("ID");
+                    int Charge = Convert.ToInt32(inxiBattery.SelectTokenKeyEndingWith("charge").ToString().Replace("%", ""));
+                    string Condition = (string)inxiBattery.SelectTokenKeyEndingWith("condition");
+                    string Volts = (string)inxiBattery.SelectTokenKeyEndingWith("volts");
+                    string Model = (string)inxiBattery.SelectTokenKeyEndingWith("model");
+                    string Status = (string)inxiBattery.SelectTokenKeyEndingWith("status");
                     InxiTrace.Debug("Got information. Name: {0}, Charge: {1}, Condition: {2}, Volts: {3}, Model: {4}, Status: {5}", Name, Charge, Condition, Volts, Model, Status);
 
                     // Create an instance of battery class

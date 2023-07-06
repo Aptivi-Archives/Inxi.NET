@@ -70,16 +70,23 @@ namespace InxiFrontend
             string SPUChipID;
 
             InxiTrace.Debug("Selecting the Audio token...");
-            foreach (var InxiSPU in InxiToken.SelectTokenKeyEndingWith("Audio"))
+            JToken spu = InxiInternalUtils.GetTokenFromInxiToken("Audio", InxiToken);
+            JToken finalProperty = spu;
+            if (spu.Type == JTokenType.Property)
             {
-                if (InxiSPU.SelectTokenKeyEndingWith("Device") is not null)
+                foreach (var InxiSpu in spu)
+                    finalProperty = InxiSpu;
+            }
+            foreach (var inxiSpu in finalProperty)
+            {
+                if (inxiSpu.SelectTokenKeyEndingWith("Device") is not null)
                 {
                     // Get information of a sound card
-                    SPUName = (string)InxiSPU.SelectTokenKeyEndingWith("Device");
-                    SPUVendor = (string)InxiSPU.SelectTokenKeyEndingWith("vendor");
-                    SPUDriver = (string)InxiSPU.SelectTokenKeyEndingWith("driver");
-                    SPUBusID = (string)InxiSPU.SelectTokenKeyEndingWith("bus ID");
-                    SPUChipID = (string)InxiSPU.SelectTokenKeyEndingWith("chip ID");
+                    SPUName = (string)inxiSpu.SelectTokenKeyEndingWith("Device");
+                    SPUVendor = (string)inxiSpu.SelectTokenKeyEndingWith("vendor");
+                    SPUDriver = (string)inxiSpu.SelectTokenKeyEndingWith("driver");
+                    SPUBusID = (string)inxiSpu.SelectTokenKeyEndingWith("bus ID");
+                    SPUChipID = (string)inxiSpu.SelectTokenKeyEndingWith("chip ID");
                     InxiTrace.Debug("Got information. SPUName: {0}, SPUDriver: {1}, SPUVendor: {2}, SPUBusID: {3}, SPUChipID: {4}", SPUName, SPUDriver, SPUVendor, SPUBusID, SPUChipID);
 
                     // Create an instance of sound class

@@ -60,11 +60,18 @@ namespace InxiFrontend
             // TODO: Free memory is not implemented in Inxi.
             InxiTrace.Debug("TODO: Free memory is not implemented in Inxi.");
             InxiTrace.Debug("Selecting the Info token...");
-            foreach (var InxiMem in InxiToken.SelectTokenKeyEndingWith("Info"))
+            JToken info = InxiInternalUtils.GetTokenFromInxiToken("Info", InxiToken);
+            JToken finalProperty = info;
+            if (info.Type == JTokenType.Property)
+            {
+                foreach (var InxiInfo in info)
+                    finalProperty = InxiInfo;
+            }
+            foreach (var inxiInfo in finalProperty)
             {
                 // Get information of memory
-                string TotalMem = (string)InxiMem.SelectTokenKeyEndingWith("Memory");
-                string UsedMem = (string)InxiMem.SelectTokenKeyEndingWith("used");
+                string TotalMem = (string)inxiInfo.SelectTokenKeyEndingWith("Memory");
+                string UsedMem = (string)inxiInfo.SelectTokenKeyEndingWith("used");
                 InxiTrace.Debug("Got information. TotalMem: {0}, UsedMem: {1}", TotalMem, UsedMem);
 
                 // Create an instance of memory class

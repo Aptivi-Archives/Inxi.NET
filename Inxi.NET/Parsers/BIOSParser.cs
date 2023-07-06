@@ -59,12 +59,19 @@ namespace InxiFrontend
             var BIOSInfo = default(BIOS);
 
             InxiTrace.Debug("Selecting the Machine token...");
-            foreach (var InxiMachine in InxiToken.SelectTokenKeyEndingWith("Machine"))
+            JToken machine = InxiInternalUtils.GetTokenFromInxiToken("Machine", InxiToken);
+            JToken finalProperty = machine;
+            if (machine.Type == JTokenType.Property)
             {
-                // Get information of system
-                string BIOS = (string)InxiMachine.SelectTokenKeyEndingWith("BIOS");
-                string Date = (string)InxiMachine.SelectTokenKeyEndingWith("date");
-                string Version = (string)InxiMachine.SelectTokenKeyEndingWith("v");
+                foreach (var InxiMachine in machine)
+                    finalProperty = InxiMachine;
+            }
+            foreach (var inxiBios in finalProperty)
+            {
+                // Get information of system BIOS
+                string BIOS = (string)inxiBios.SelectTokenKeyEndingWith("BIOS");
+                string Date = (string)inxiBios.SelectTokenKeyEndingWith("date");
+                string Version = (string)inxiBios.SelectTokenKeyEndingWith("v");
                 InxiTrace.Debug("Got information. BIOS: {0}, Date: {1}, Version: {2}", BIOS, Date, Version);
 
                 // Create an instance of system class
