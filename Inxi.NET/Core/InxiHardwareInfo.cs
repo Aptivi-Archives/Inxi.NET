@@ -16,13 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Management;
 using System.Text;
 using Claunia.PropertyList;
-using Extensification.StringExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -292,7 +291,7 @@ namespace InxiFrontend
             }
 
             // Battery
-            foreach (Battery Parsed in BatteryParsed)
+            foreach (Battery Parsed in BatteryParsed.Cast<Battery>())
                 BatteryProcessed.Add(Parsed);
 
             // Install parsed information to current instance

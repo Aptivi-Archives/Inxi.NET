@@ -18,10 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.DictionaryExts;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -159,7 +158,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: Name, Driver, DriverVersion, Bus ID, Chip ID, and State not implemented in macOS.");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPNetworkDataType")
                 {
@@ -168,7 +167,7 @@ namespace InxiFrontend
                     // Get information of a network adapter
                     NSArray NetEnum = (NSArray)DataType["_items"];
                     InxiTrace.Debug("Enumerating network cards...");
-                    foreach (NSDictionary NetDict in NetEnum)
+                    foreach (NSDictionary NetDict in NetEnum.Cast<NSDictionary>())
                     {
                         NSDictionary EthernetDict = (NSDictionary)NetDict["Ethernet"];
                         NSArray EthernetMediaOptions = (NSArray)EthernetDict["MediaOptions"];
@@ -244,7 +243,8 @@ namespace InxiFrontend
 
                 // Create instance of network class
                 Network = new Network(NetName, NetDriver, NetDriverVersion, NetDuplex, NetSpeed, NetState, NetMacAddress, NetDeviceID, NetChipID, NetBusID);
-                NetworkParsed.AddIfNotFound(NetName, Network);
+                if (!NetworkParsed.ContainsKey(NetName))
+                    NetworkParsed.Add(NetName, Network);
                 InxiTrace.Debug("Added {0} to the list of parsed network cards.", NetName);
             }
 

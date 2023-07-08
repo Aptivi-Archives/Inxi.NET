@@ -18,9 +18,9 @@
 
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -95,7 +95,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: Bits, DE, WM, and DM not implemented in macOS.");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPSoftwareDataType")
                 {
@@ -104,7 +104,7 @@ namespace InxiFrontend
                     // Get information of the system
                     NSArray SoftwareEnum = (NSArray)DataType["_items"];
                     InxiTrace.Debug("Enumerating system information...");
-                    foreach (NSDictionary SoftwareDict in SoftwareEnum)
+                    foreach (NSDictionary SoftwareDict in SoftwareEnum.Cast<NSDictionary>())
                     {
                         // Get information of memory
                         string Hostname = (string)SoftwareDict["local_host_name"].ToObject();

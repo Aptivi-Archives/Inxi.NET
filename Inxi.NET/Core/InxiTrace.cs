@@ -19,7 +19,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using Extensification.StringExts;
 
 namespace InxiFrontend
 {
@@ -104,13 +103,14 @@ namespace InxiFrontend
                 }
             }
 
+            Message = string.Format(Message, Values);
             if (Source is not null & !(Convert.ToDouble(LineNum) == 0d))
             {
-                DebugDataReceived?.Invoke($"({Func} - {Source}:{LineNum}) {Message.FormatString(Values)}", Message.FormatString(Values));
+                DebugDataReceived?.Invoke($"({Func} - {Source}:{LineNum}) {Message}", Message);
             }
             else
             {
-                DebugDataReceived?.Invoke(Message.FormatString(Values), Message.FormatString(Values));
+                DebugDataReceived?.Invoke(Message, Message);
             }
         }
 

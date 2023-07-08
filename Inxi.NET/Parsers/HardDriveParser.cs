@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -163,7 +163,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: Drive vendor and speed not implemented in macOS");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPStorageDataType")
                 {
@@ -172,7 +172,7 @@ namespace InxiFrontend
                     // Get information of a drive
                     NSArray DriveEnum = (NSArray)DataType["_items"];
                     InxiTrace.Debug("Enumerating drives...");
-                    foreach (NSDictionary DriveDict in DriveEnum)
+                    foreach (NSDictionary DriveDict in DriveEnum.Cast<NSDictionary>())
                     {
                         string DriveSize = Convert.ToString(DriveDict["size_in_bytes"].ToObject());
                         string DriveModel = (string)(DriveDict["physical_drive"] as NSDictionary)["device_name"].ToObject();

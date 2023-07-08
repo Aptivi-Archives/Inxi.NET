@@ -18,12 +18,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using Claunia.PropertyList;
-using Extensification.ArrayExts;
-using Extensification.DictionaryExts;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -115,7 +113,8 @@ namespace InxiFrontend
 
             // Create an instance of processor class
             CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags, CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);
-            CPUParsed.AddIfNotFound(CPUName, CPU);
+            if (!CPUParsed.ContainsKey(CPUName))
+                CPUParsed.Add(CPUName, CPU);
             InxiTrace.Debug("Added {0} to the list of parsed processors.", CPUName);
             return CPUParsed;
         }
@@ -142,7 +141,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: L2 and speed only done in macOS.");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
                 {
@@ -150,7 +149,7 @@ namespace InxiFrontend
 
                     // Get information of a drive
                     NSArray HardwareEnum = (NSArray)DataType["_items"];
-                    foreach (NSDictionary HardwareDict in HardwareEnum)
+                    foreach (NSDictionary HardwareDict in HardwareEnum.Cast<NSDictionary>())
                     {
                         CPUL2Size = (string)HardwareDict["l2_cache"].ToObject();
                         CPUSpeed = (string)HardwareDict["current_processor_speed"].ToObject();
@@ -161,7 +160,8 @@ namespace InxiFrontend
 
             // Create an instance of processor class
             CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags, CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);
-            CPUParsed.AddIfNotFound(CPUName, CPU);
+            if (!CPUParsed.ContainsKey(CPUName))
+                CPUParsed.Add(CPUName, CPU);
             InxiTrace.Debug("Added {0} to the list of parsed processors.", CPUName);
             return CPUParsed;
         }
@@ -179,7 +179,7 @@ namespace InxiFrontend
             string CPUType = "";
             var CPUBits = default(int);
             string CPUMilestone = "";
-            var CPUFlags = Array.Empty<string>();
+            var CPUFlags = new List<string>();
             string CPUL2Size = "";
             int CPUL3Size = 0;
             string CPUSpeed = "";
@@ -201,14 +201,15 @@ namespace InxiFrontend
                 foreach (CPUFeatures.SSEnum CPUFeature in Enum.GetValues(typeof(CPUFeatures.SSEnum)))
                 {
                     if (CPUFeatures.IsProcessorFeaturePresent(CPUFeature))
-                        CPUFlags = CPUFlags.Add(CPUFeature.ToString().ToLower());
+                        CPUFlags.Add(CPUFeature.ToString().ToLower());
                 }
-                InxiTrace.Debug("Got information. CPUName: {0}, CPUType: {1}, CPUBits: {2}, CPUL2Size: {3}, CPUFlags: {4}, CPUL3Size: {5}, CPUSpeed: {6}", CPUName, CPUType, CPUBits, CPUL2Size, CPUFlags.Length, CPUL3Size, CPUSpeed);
+                InxiTrace.Debug("Got information. CPUName: {0}, CPUType: {1}, CPUBits: {2}, CPUL2Size: {3}, CPUFlags: {4}, CPUL3Size: {5}, CPUSpeed: {6}", CPUName, CPUType, CPUBits, CPUL2Size, CPUFlags.Count, CPUL3Size, CPUSpeed);
             }
 
             // Create an instance of processor class
-            CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags, CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);
-            CPUParsed.AddIfNotFound(CPUName, CPU);
+            CPU = new Processor(CPUName, CPUTopology, CPUType, CPUBits, CPUMilestone, CPUFlags.ToArray(), CPUL2Size, CPUL3Size, CPURev, CPUBogoMips, CPUSpeed);
+            if (!CPUParsed.ContainsKey(CPUName))
+                CPUParsed.Add(CPUName, CPU);
             InxiTrace.Debug("Added {0} to the list of parsed processors.", CPUName);
             return CPUParsed;
         }

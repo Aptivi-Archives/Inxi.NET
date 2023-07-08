@@ -18,10 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.DictionaryExts;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -110,7 +109,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: GPU Driver, bus ID, and driver version not implemented in macOS (maybe kexts (kernel extensions) provide this information).");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPDisplaysDataType")
                 {
@@ -119,7 +118,7 @@ namespace InxiFrontend
                     // Get information of a graphics card
                     NSArray GraphicsEnum = (NSArray)DataType["_items"];
                     InxiTrace.Debug("Enumerating graphics cards...");
-                    foreach (NSDictionary GraphicsDict in GraphicsEnum)
+                    foreach (NSDictionary GraphicsDict in GraphicsEnum.Cast<NSDictionary>())
                     {
                         GPUName = (string)GraphicsDict["spdisplays_device-id"].ToObject();
                         GPUChipID = (string)GraphicsDict["spdisplays_vendor-id"].ToObject();
@@ -166,7 +165,8 @@ namespace InxiFrontend
 
                     // Create an instance of graphics class
                     GPU = new Graphics(GPUName, GPUDriver, GPUDriverVersion, GPUChipID, GPUBusID);
-                    GPUParsed.AddIfNotFound(GPUName, GPU);
+                    if (!GPUParsed.ContainsKey(GPUName))
+                        GPUParsed.Add(GPUName, GPU);
                     InxiTrace.Debug("Added {0} to the list of parsed GPUs.", GPUName);
                 }
                 catch (Exception ex)

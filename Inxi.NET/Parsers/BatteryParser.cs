@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend

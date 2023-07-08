@@ -16,13 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
-using System.Xml.Linq;
 using Claunia.PropertyList;
-using Extensification.DictionaryExts;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -91,7 +88,8 @@ namespace InxiFrontend
 
                     // Create an instance of sound class
                     SPU = new Sound(SPUName, SPUVendor, SPUDriver, SPUChipID, SPUBusID);
-                    SPUParsed.AddIfNotFound(SPUName, SPU);
+                    if (!SPUParsed.ContainsKey(SPUName))
+                        SPUParsed.Add(SPUName, SPU);
                     InxiTrace.Debug("Added {0} to the list of parsed SPUs.", SPUName);
                 }
             }
@@ -108,7 +106,7 @@ namespace InxiFrontend
             // TODO: Bus ID and Chip ID not implemented in macOS.
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: Bus ID and Chip ID not implemented in macOS.");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPAudioDataType")
                 {
@@ -116,10 +114,10 @@ namespace InxiFrontend
 
                     // Get information of a drive
                     NSArray AudioEnum = (NSArray)DataType["_items"];
-                    foreach (NSDictionary AudioDict in AudioEnum)
+                    foreach (NSDictionary AudioDict in AudioEnum.Cast<NSDictionary>())
                     {
                         NSArray AudioItemEnum = (NSArray)AudioDict["_items"];
-                        foreach (NSDictionary AudioItemDict in AudioItemEnum)
+                        foreach (NSDictionary AudioItemDict in AudioItemEnum.Cast<NSDictionary>())
                         {
                             string Name = "";
                             string Vendor = "";
@@ -133,8 +131,9 @@ namespace InxiFrontend
 
                             // Create an instance of sound class
                             SPU = new Sound(Name, Vendor, Driver, "", "");
-                            SPUParsed.AddIfNotFound(Name, SPU);
-                            InxiTrace.Debug("Added Placeholder to the list of parsed SPUs.");
+                            if (!SPUParsed.ContainsKey(Name))
+                                SPUParsed.Add(Name, SPU);
+                            InxiTrace.Debug("Added {0} to the list of parsed SPUs.", Name);
                         }
                     }
                 }
@@ -171,7 +170,8 @@ namespace InxiFrontend
 
                 // Create an instance of sound class
                 SPU = new Sound(SPUName, SPUVendor, SPUDriver, SPUChipID, SPUBusID);
-                SPUParsed.AddIfNotFound(SPUName, SPU);
+                if (!SPUParsed.ContainsKey(SPUName))
+                    SPUParsed.Add(SPUName, SPU);
                 InxiTrace.Debug("Added {0} to the list of parsed SPUs.", SPUName);
             }
 

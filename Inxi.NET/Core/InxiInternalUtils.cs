@@ -18,6 +18,7 @@
 
 using Newtonsoft.Json.Linq;
 using System;
+using System.Linq;
 using UnameNET;
 
 namespace InxiFrontend
@@ -29,10 +30,8 @@ namespace InxiFrontend
         /// <summary>
         /// Is the platform Unix?
         /// </summary>
-        internal static bool IsUnix()
-        {
-            return Environment.OSVersion.Platform == PlatformID.Unix;
-        }
+        internal static bool IsUnix() =>
+            Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
         /// Is the Unix platform macOS?
@@ -46,9 +45,7 @@ namespace InxiFrontend
                 return System.Contains("Darwin");
             }
             else
-            {
                 return false;
-            }
         }
 
         internal static JToken GetTokenFromInxiToken(string name, JToken InxiToken)
@@ -58,6 +55,62 @@ namespace InxiFrontend
                     if (token1.Path.Contains(name))
                         return token1;
             return null;
+        }
+
+        internal static string ReplaceAllRange(this string Str, string[] ToBeReplaced, string[] ToReplace)
+        {
+            if (Str is null)
+                throw new ArgumentNullException(nameof(Str));
+            if (ToBeReplaced is null)
+                throw new ArgumentNullException(nameof(ToBeReplaced));
+            if (ToBeReplaced.Length == 0)
+                throw new ArgumentNullException(nameof(ToBeReplaced));
+            if (ToReplace is null)
+                throw new ArgumentNullException(nameof(ToReplace));
+            if (ToReplace.Length == 0)
+                throw new ArgumentNullException(nameof(ToReplace));
+            if (ToBeReplaced.Length != ToBeReplaced.Length)
+                throw new ArgumentException("Array length of which strings to be replaced doesn't equal the array length of which strings to replace.");
+            for (int i = 0, loopTo = ToBeReplaced.Length - 1; i <= loopTo; i++)
+                Str = Str.Replace(ToBeReplaced[i], ToReplace[i]);
+            return Str;
+        }
+
+        internal static string[] SplitNewLines(this string Str) =>
+            Str.Replace(Convert.ToChar(13).ToString(), "").Split(Convert.ToChar(10));
+
+        internal static string GetPropertyNameEndingWith(this JToken Token, string Containing)
+        {
+            foreach (JProperty TokenProperty in Token.Cast<JProperty>())
+                if (TokenProperty.Name.EndsWith(Containing))
+                    return TokenProperty.Name;
+            return "";
+        }
+
+        internal static string GetPropertyNameContaining(this JToken Token, string Containing)
+        {
+            foreach (JProperty TokenProperty in Token.Cast<JProperty>())
+                if (TokenProperty.Name.Contains(Containing))
+                    return TokenProperty.Name;
+            return "";
+        }
+
+        internal static JToken SelectTokenKeyEndingWith(this JToken Token, string Containing)
+        {
+            string PropertyName = Token.GetPropertyNameEndingWith(Containing);
+            if (!string.IsNullOrEmpty(PropertyName))
+                return Token.SelectToken("['" + PropertyName.ReplaceAllRange(new[] { @"\", "/", "'", "\"" }, new[] { @"\\", @"\/", @"\'", @"\""" }) + "']");
+            else
+                return null;
+        }
+
+        internal static JToken SelectTokenKeyContaining(this JToken Token, string Containing)
+        {
+            string PropertyName = Token.GetPropertyNameContaining(Containing);
+            if (!string.IsNullOrEmpty(PropertyName))
+                return Token.SelectToken("['" + PropertyName.ReplaceAllRange(new[] { @"\", "/", "'", "\"" }, new[] { @"\\", @"\/", @"\'", @"\""" }) + "']");
+            else
+                return null;
         }
 
     }

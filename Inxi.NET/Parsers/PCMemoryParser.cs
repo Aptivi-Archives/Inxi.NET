@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using System.Management;
 using Claunia.PropertyList;
-using Extensification.External.Newtonsoft.Json.JPropertyExts;
 using Newtonsoft.Json.Linq;
 
 namespace InxiFrontend
@@ -89,7 +89,7 @@ namespace InxiFrontend
             // Check for data type
             InxiTrace.Debug("Checking for data type...");
             InxiTrace.Debug("TODO: Used memory and free memory not implemented in macOS.");
-            foreach (NSDictionary DataType in SystemProfilerToken)
+            foreach (NSDictionary DataType in SystemProfilerToken.Cast<NSDictionary>())
             {
                 if ((string)DataType["_dataType"].ToObject() == "SPHardwareDataType")
                 {
@@ -98,7 +98,7 @@ namespace InxiFrontend
                     // Get information of a memory
                     NSArray HardwareEnum = (NSArray)DataType["_items"];
                     InxiTrace.Debug("Enumerating memory information...");
-                    foreach (NSDictionary HardwareDict in HardwareEnum)
+                    foreach (NSDictionary HardwareDict in HardwareEnum.Cast<NSDictionary>())
                     {
                         // Get information of memory
                         string TotalMem = (string)HardwareDict["physical_memory"].ToObject();
