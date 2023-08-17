@@ -104,7 +104,8 @@ namespace InxiFrontend
                         CreateNoWindow = true,
                         UseShellExecute = false,
                         WindowStyle = ProcessWindowStyle.Hidden,
-                        RedirectStandardOutput = true
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
                     };
                     SystemProfilerProcess.StartInfo = SystemProfilerProcessInfo;
                     InxiTrace.Debug("Starting system_profiler with \"SPSoftwareDataType SPAudioDataType SPHardwareDataType SPNetworkDataType SPStorageDataType SPDisplaysDataType -xml\"...");
@@ -124,7 +125,8 @@ namespace InxiFrontend
                         CreateNoWindow = true,
                         UseShellExecute = false,
                         WindowStyle = ProcessWindowStyle.Hidden,
-                        RedirectStandardOutput = true
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
                     };
                     InxiProcess.StartInfo = InxiProcessInfo;
                     InxiTrace.Debug("Starting inxi with \"-Fxx --output json --output-file print\"...");
