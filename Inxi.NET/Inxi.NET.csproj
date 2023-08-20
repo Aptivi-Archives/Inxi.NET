@@ -7,6 +7,7 @@
     <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>../Inxi.NET.Bin</PackageOutputPath>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Version>2022.5.0.1</Version>
     <Authors>Aptivi</Authors>
     <Description>Inxi.NET is the Linux and Windows hardware information frontend using Inxi and Windows Management Instrumentation (WMI) as its backend for getting system information.</Description>
