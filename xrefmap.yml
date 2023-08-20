@@ -7,6 +7,51 @@ references:
   commentId: N:InxiFrontend
   fullName: InxiFrontend
   nameWithType: InxiFrontend
+- uid: InxiFrontend.BIOS
+  name: BIOS
+  href: api/InxiFrontend.BIOS.html
+  commentId: T:InxiFrontend.BIOS
+  fullName: InxiFrontend.BIOS
+  nameWithType: BIOS
+- uid: InxiFrontend.BIOS.Date
+  name: Date
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Date
+  commentId: P:InxiFrontend.BIOS.Date
+  fullName: InxiFrontend.BIOS.Date
+  nameWithType: BIOS.Date
+- uid: InxiFrontend.BIOS.Date*
+  name: Date
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Date_
+  commentId: Overload:InxiFrontend.BIOS.Date
+  isSpec: "True"
+  fullName: InxiFrontend.BIOS.Date
+  nameWithType: BIOS.Date
+- uid: InxiFrontend.BIOS.Name
+  name: Name
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Name
+  commentId: P:InxiFrontend.BIOS.Name
+  fullName: InxiFrontend.BIOS.Name
+  nameWithType: BIOS.Name
+- uid: InxiFrontend.BIOS.Name*
+  name: Name
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Name_
+  commentId: Overload:InxiFrontend.BIOS.Name
+  isSpec: "True"
+  fullName: InxiFrontend.BIOS.Name
+  nameWithType: BIOS.Name
+- uid: InxiFrontend.BIOS.Version
+  name: Version
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Version
+  commentId: P:InxiFrontend.BIOS.Version
+  fullName: InxiFrontend.BIOS.Version
+  nameWithType: BIOS.Version
+- uid: InxiFrontend.BIOS.Version*
+  name: Version
+  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Version_
+  commentId: Overload:InxiFrontend.BIOS.Version
+  isSpec: "True"
+  fullName: InxiFrontend.BIOS.Version
+  nameWithType: BIOS.Version
 - uid: InxiFrontend.Battery
   name: Battery
   href: api/InxiFrontend.Battery.html
@@ -91,51 +136,6 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.Battery.Volts
   nameWithType: Battery.Volts
-- uid: InxiFrontend.BIOS
-  name: BIOS
-  href: api/InxiFrontend.BIOS.html
-  commentId: T:InxiFrontend.BIOS
-  fullName: InxiFrontend.BIOS
-  nameWithType: BIOS
-- uid: InxiFrontend.BIOS.Date
-  name: Date
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Date
-  commentId: P:InxiFrontend.BIOS.Date
-  fullName: InxiFrontend.BIOS.Date
-  nameWithType: BIOS.Date
-- uid: InxiFrontend.BIOS.Date*
-  name: Date
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Date_
-  commentId: Overload:InxiFrontend.BIOS.Date
-  isSpec: "True"
-  fullName: InxiFrontend.BIOS.Date
-  nameWithType: BIOS.Date
-- uid: InxiFrontend.BIOS.Name
-  name: Name
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Name
-  commentId: P:InxiFrontend.BIOS.Name
-  fullName: InxiFrontend.BIOS.Name
-  nameWithType: BIOS.Name
-- uid: InxiFrontend.BIOS.Name*
-  name: Name
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Name_
-  commentId: Overload:InxiFrontend.BIOS.Name
-  isSpec: "True"
-  fullName: InxiFrontend.BIOS.Name
-  nameWithType: BIOS.Name
-- uid: InxiFrontend.BIOS.Version
-  name: Version
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Version
-  commentId: P:InxiFrontend.BIOS.Version
-  fullName: InxiFrontend.BIOS.Version
-  nameWithType: BIOS.Version
-- uid: InxiFrontend.BIOS.Version*
-  name: Version
-  href: api/InxiFrontend.BIOS.html#InxiFrontend_BIOS_Version_
-  commentId: Overload:InxiFrontend.BIOS.Version
-  isSpec: "True"
-  fullName: InxiFrontend.BIOS.Version
-  nameWithType: BIOS.Version
 - uid: InxiFrontend.Graphics
   name: Graphics
   href: api/InxiFrontend.Graphics.html
@@ -343,30 +343,36 @@ references:
   fullName: InxiFrontend.HardwareInfo
   nameWithType: HardwareInfo
 - uid: InxiFrontend.HardwareInfo.#ctor(System.String,InxiFrontend.InxiHardwareType)
-  name: HardwareInfo(String, InxiHardwareType)
+  name: HardwareInfo(string, InxiHardwareType)
   href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo__ctor_System_String_InxiFrontend_InxiHardwareType_
   commentId: M:InxiFrontend.HardwareInfo.#ctor(System.String,InxiFrontend.InxiHardwareType)
-  fullName: InxiFrontend.HardwareInfo.HardwareInfo(System.String, InxiFrontend.InxiHardwareType)
-  nameWithType: HardwareInfo.HardwareInfo(String, InxiHardwareType)
+  name.vb: New(String, InxiHardwareType)
+  fullName: InxiFrontend.HardwareInfo.HardwareInfo(string, InxiFrontend.InxiHardwareType)
+  fullName.vb: InxiFrontend.HardwareInfo.New(String, InxiFrontend.InxiHardwareType)
+  nameWithType: HardwareInfo.HardwareInfo(string, InxiHardwareType)
+  nameWithType.vb: HardwareInfo.New(String, InxiHardwareType)
 - uid: InxiFrontend.HardwareInfo.#ctor*
   name: HardwareInfo
   href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo__ctor_
   commentId: Overload:InxiFrontend.HardwareInfo.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: InxiFrontend.HardwareInfo.HardwareInfo
+  fullName.vb: InxiFrontend.HardwareInfo.New
   nameWithType: HardwareInfo.HardwareInfo
-- uid: InxiFrontend.HardwareInfo.Battery
-  name: Battery
-  href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_Battery
-  commentId: F:InxiFrontend.HardwareInfo.Battery
-  fullName: InxiFrontend.HardwareInfo.Battery
-  nameWithType: HardwareInfo.Battery
+  nameWithType.vb: HardwareInfo.New
 - uid: InxiFrontend.HardwareInfo.BIOS
   name: BIOS
   href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_BIOS
   commentId: F:InxiFrontend.HardwareInfo.BIOS
   fullName: InxiFrontend.HardwareInfo.BIOS
   nameWithType: HardwareInfo.BIOS
+- uid: InxiFrontend.HardwareInfo.Battery
+  name: Battery
+  href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_Battery
+  commentId: F:InxiFrontend.HardwareInfo.Battery
+  fullName: InxiFrontend.HardwareInfo.Battery
+  nameWithType: HardwareInfo.Battery
 - uid: InxiFrontend.HardwareInfo.CPU
   name: CPU
   href: api/InxiFrontend.HardwareInfo.html#InxiFrontend_HardwareInfo_CPU
@@ -427,11 +433,11 @@ references:
   commentId: T:InxiFrontend.HardwareParserBase
   fullName: InxiFrontend.HardwareParserBase
   nameWithType: HardwareParserBase
-- uid: InxiFrontend.HardwareParserBase.Parse(JToken,NSArray)
+- uid: InxiFrontend.HardwareParserBase.Parse(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: Parse(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_Parse_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.Parse(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.Parse(JToken, NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_Parse_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.Parse(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.Parse(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.Parse(JToken, NSArray)
 - uid: InxiFrontend.HardwareParserBase.Parse*
   name: Parse
@@ -440,11 +446,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.Parse
   nameWithType: HardwareParserBase.Parse
-- uid: InxiFrontend.HardwareParserBase.ParseAll(JToken,NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAll(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: ParseAll(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAll_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAll(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAll(JToken, NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAll_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAll(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseAll(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.ParseAll(JToken, NSArray)
 - uid: InxiFrontend.HardwareParserBase.ParseAll*
   name: ParseAll
@@ -453,11 +459,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAll
   nameWithType: HardwareParserBase.ParseAll
-- uid: InxiFrontend.HardwareParserBase.ParseAllLinux(JToken)
+- uid: InxiFrontend.HardwareParserBase.ParseAllLinux(Newtonsoft.Json.Linq.JToken)
   name: ParseAllLinux(JToken)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllLinux_JToken_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllLinux(JToken)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllLinux(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllLinux_Newtonsoft_Json_Linq_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllLinux(Newtonsoft.Json.Linq.JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllLinux(Newtonsoft.Json.Linq.JToken)
   nameWithType: HardwareParserBase.ParseAllLinux(JToken)
 - uid: InxiFrontend.HardwareParserBase.ParseAllLinux*
   name: ParseAllLinux
@@ -466,11 +472,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllLinux
   nameWithType: HardwareParserBase.ParseAllLinux
-- uid: InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllMacOS(Claunia.PropertyList.NSArray)
   name: ParseAllMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS(NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllMacOS_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllMacOS(Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS(Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.ParseAllMacOS(NSArray)
 - uid: InxiFrontend.HardwareParserBase.ParseAllMacOS*
   name: ParseAllMacOS
@@ -479,11 +485,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllMacOS
   nameWithType: HardwareParserBase.ParseAllMacOS
-- uid: InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToList(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: ParseAllToList(JToken, NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_JToken_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToList(JToken,NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToList(JToken, NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToList_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToList(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToList(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.ParseAllToList(JToken, NSArray)
 - uid: InxiFrontend.HardwareParserBase.ParseAllToList*
   name: ParseAllToList
@@ -492,11 +498,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllToList
   nameWithType: HardwareParserBase.ParseAllToList
-- uid: InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListLinux(Newtonsoft.Json.Linq.JToken)
   name: ParseAllToListLinux(JToken)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListLinux_JToken_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListLinux_Newtonsoft_Json_Linq_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListLinux(Newtonsoft.Json.Linq.JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux(Newtonsoft.Json.Linq.JToken)
   nameWithType: HardwareParserBase.ParseAllToListLinux(JToken)
 - uid: InxiFrontend.HardwareParserBase.ParseAllToListLinux*
   name: ParseAllToListLinux
@@ -505,11 +511,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllToListLinux
   nameWithType: HardwareParserBase.ParseAllToListLinux
-- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(Claunia.PropertyList.NSArray)
   name: ParseAllToListMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListMacOS_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListMacOS(Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS(Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.ParseAllToListMacOS(NSArray)
 - uid: InxiFrontend.HardwareParserBase.ParseAllToListMacOS*
   name: ParseAllToListMacOS
@@ -518,11 +524,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllToListMacOS
   nameWithType: HardwareParserBase.ParseAllToListMacOS
-- uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+- uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows(System.Management.ManagementObjectSearcher)
   name: ParseAllToListWindows(ManagementObjectSearcher)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListWindows_ManagementObjectSearcher_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllToListWindows_System_Management_ManagementObjectSearcher_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllToListWindows(System.Management.ManagementObjectSearcher)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllToListWindows(System.Management.ManagementObjectSearcher)
   nameWithType: HardwareParserBase.ParseAllToListWindows(ManagementObjectSearcher)
 - uid: InxiFrontend.HardwareParserBase.ParseAllToListWindows*
   name: ParseAllToListWindows
@@ -531,11 +537,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllToListWindows
   nameWithType: HardwareParserBase.ParseAllToListWindows
-- uid: InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)
+- uid: InxiFrontend.HardwareParserBase.ParseAllWindows(System.Management.ManagementObjectSearcher)
   name: ParseAllWindows(ManagementObjectSearcher)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllWindows_ManagementObjectSearcher_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)
-  fullName: InxiFrontend.HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseAllWindows_System_Management_ManagementObjectSearcher_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseAllWindows(System.Management.ManagementObjectSearcher)
+  fullName: InxiFrontend.HardwareParserBase.ParseAllWindows(System.Management.ManagementObjectSearcher)
   nameWithType: HardwareParserBase.ParseAllWindows(ManagementObjectSearcher)
 - uid: InxiFrontend.HardwareParserBase.ParseAllWindows*
   name: ParseAllWindows
@@ -544,11 +550,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseAllWindows
   nameWithType: HardwareParserBase.ParseAllWindows
-- uid: InxiFrontend.HardwareParserBase.ParseLinux(JToken)
+- uid: InxiFrontend.HardwareParserBase.ParseLinux(Newtonsoft.Json.Linq.JToken)
   name: ParseLinux(JToken)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseLinux_JToken_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseLinux(JToken)
-  fullName: InxiFrontend.HardwareParserBase.ParseLinux(JToken)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseLinux_Newtonsoft_Json_Linq_JToken_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseLinux(Newtonsoft.Json.Linq.JToken)
+  fullName: InxiFrontend.HardwareParserBase.ParseLinux(Newtonsoft.Json.Linq.JToken)
   nameWithType: HardwareParserBase.ParseLinux(JToken)
 - uid: InxiFrontend.HardwareParserBase.ParseLinux*
   name: ParseLinux
@@ -557,11 +563,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseLinux
   nameWithType: HardwareParserBase.ParseLinux
-- uid: InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
+- uid: InxiFrontend.HardwareParserBase.ParseMacOS(Claunia.PropertyList.NSArray)
   name: ParseMacOS(NSArray)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseMacOS_NSArray_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
-  fullName: InxiFrontend.HardwareParserBase.ParseMacOS(NSArray)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseMacOS_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseMacOS(Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.HardwareParserBase.ParseMacOS(Claunia.PropertyList.NSArray)
   nameWithType: HardwareParserBase.ParseMacOS(NSArray)
 - uid: InxiFrontend.HardwareParserBase.ParseMacOS*
   name: ParseMacOS
@@ -570,11 +576,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.HardwareParserBase.ParseMacOS
   nameWithType: HardwareParserBase.ParseMacOS
-- uid: InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)
+- uid: InxiFrontend.HardwareParserBase.ParseWindows(System.Management.ManagementObjectSearcher)
   name: ParseWindows(ManagementObjectSearcher)
-  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseWindows_ManagementObjectSearcher_
-  commentId: M:InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)
-  fullName: InxiFrontend.HardwareParserBase.ParseWindows(ManagementObjectSearcher)
+  href: api/InxiFrontend.HardwareParserBase.html#InxiFrontend_HardwareParserBase_ParseWindows_System_Management_ManagementObjectSearcher_
+  commentId: M:InxiFrontend.HardwareParserBase.ParseWindows(System.Management.ManagementObjectSearcher)
+  fullName: InxiFrontend.HardwareParserBase.ParseWindows(System.Management.ManagementObjectSearcher)
   nameWithType: HardwareParserBase.ParseWindows(ManagementObjectSearcher)
 - uid: InxiFrontend.HardwareParserBase.ParseWindows*
   name: ParseWindows
@@ -589,11 +595,11 @@ references:
   commentId: T:InxiFrontend.IHardwareParser
   fullName: InxiFrontend.IHardwareParser
   nameWithType: IHardwareParser
-- uid: InxiFrontend.IHardwareParser.Parse(JToken,NSArray)
+- uid: InxiFrontend.IHardwareParser.Parse(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: Parse(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_Parse_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.Parse(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.Parse(JToken, NSArray)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_Parse_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.IHardwareParser.Parse(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.IHardwareParser.Parse(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: IHardwareParser.Parse(JToken, NSArray)
 - uid: InxiFrontend.IHardwareParser.Parse*
   name: Parse
@@ -602,11 +608,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.IHardwareParser.Parse
   nameWithType: IHardwareParser.Parse
-- uid: InxiFrontend.IHardwareParser.ParseAll(JToken,NSArray)
+- uid: InxiFrontend.IHardwareParser.ParseAll(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: ParseAll(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAll_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.ParseAll(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.ParseAll(JToken, NSArray)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAll_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.IHardwareParser.ParseAll(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.IHardwareParser.ParseAll(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: IHardwareParser.ParseAll(JToken, NSArray)
 - uid: InxiFrontend.IHardwareParser.ParseAll*
   name: ParseAll
@@ -615,11 +621,11 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.IHardwareParser.ParseAll
   nameWithType: IHardwareParser.ParseAll
-- uid: InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
+- uid: InxiFrontend.IHardwareParser.ParseAllToList(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
   name: ParseAllToList(JToken, NSArray)
-  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_JToken_NSArray_
-  commentId: M:InxiFrontend.IHardwareParser.ParseAllToList(JToken,NSArray)
-  fullName: InxiFrontend.IHardwareParser.ParseAllToList(JToken, NSArray)
+  href: api/InxiFrontend.IHardwareParser.html#InxiFrontend_IHardwareParser_ParseAllToList_Newtonsoft_Json_Linq_JToken_Claunia_PropertyList_NSArray_
+  commentId: M:InxiFrontend.IHardwareParser.ParseAllToList(Newtonsoft.Json.Linq.JToken,Claunia.PropertyList.NSArray)
+  fullName: InxiFrontend.IHardwareParser.ParseAllToList(Newtonsoft.Json.Linq.JToken, Claunia.PropertyList.NSArray)
   nameWithType: IHardwareParser.ParseAllToList(JToken, NSArray)
 - uid: InxiFrontend.IHardwareParser.ParseAllToList*
   name: ParseAllToList
@@ -638,27 +644,39 @@ references:
   name: Inxi()
   href: api/InxiFrontend.Inxi.html#InxiFrontend_Inxi__ctor
   commentId: M:InxiFrontend.Inxi.#ctor
+  name.vb: New()
   fullName: InxiFrontend.Inxi.Inxi()
+  fullName.vb: InxiFrontend.Inxi.New()
   nameWithType: Inxi.Inxi()
+  nameWithType.vb: Inxi.New()
 - uid: InxiFrontend.Inxi.#ctor(InxiFrontend.InxiHardwareType)
   name: Inxi(InxiHardwareType)
   href: api/InxiFrontend.Inxi.html#InxiFrontend_Inxi__ctor_InxiFrontend_InxiHardwareType_
   commentId: M:InxiFrontend.Inxi.#ctor(InxiFrontend.InxiHardwareType)
+  name.vb: New(InxiHardwareType)
   fullName: InxiFrontend.Inxi.Inxi(InxiFrontend.InxiHardwareType)
+  fullName.vb: InxiFrontend.Inxi.New(InxiFrontend.InxiHardwareType)
   nameWithType: Inxi.Inxi(InxiHardwareType)
+  nameWithType.vb: Inxi.New(InxiHardwareType)
 - uid: InxiFrontend.Inxi.#ctor(System.String,System.String,System.String,InxiFrontend.InxiHardwareType)
-  name: Inxi(String, String, String, InxiHardwareType)
+  name: Inxi(string, string, string, InxiHardwareType)
   href: api/InxiFrontend.Inxi.html#InxiFrontend_Inxi__ctor_System_String_System_String_System_String_InxiFrontend_InxiHardwareType_
   commentId: M:InxiFrontend.Inxi.#ctor(System.String,System.String,System.String,InxiFrontend.InxiHardwareType)
-  fullName: InxiFrontend.Inxi.Inxi(System.String, System.String, System.String, InxiFrontend.InxiHardwareType)
-  nameWithType: Inxi.Inxi(String, String, String, InxiHardwareType)
+  name.vb: New(String, String, String, InxiHardwareType)
+  fullName: InxiFrontend.Inxi.Inxi(string, string, string, InxiFrontend.InxiHardwareType)
+  fullName.vb: InxiFrontend.Inxi.New(String, String, String, InxiFrontend.InxiHardwareType)
+  nameWithType: Inxi.Inxi(string, string, string, InxiHardwareType)
+  nameWithType.vb: Inxi.New(String, String, String, InxiHardwareType)
 - uid: InxiFrontend.Inxi.#ctor*
   name: Inxi
   href: api/InxiFrontend.Inxi.html#InxiFrontend_Inxi__ctor_
   commentId: Overload:InxiFrontend.Inxi.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: InxiFrontend.Inxi.Inxi
+  fullName.vb: InxiFrontend.Inxi.New
   nameWithType: Inxi.Inxi
+  nameWithType.vb: Inxi.New
 - uid: InxiFrontend.Inxi.Hardware
   name: Hardware
   href: api/InxiFrontend.Inxi.html#InxiFrontend_Inxi_Hardware
@@ -671,18 +689,18 @@ references:
   commentId: T:InxiFrontend.InxiHardwareType
   fullName: InxiFrontend.InxiHardwareType
   nameWithType: InxiHardwareType
-- uid: InxiFrontend.InxiHardwareType.Battery
-  name: Battery
-  href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_Battery
-  commentId: F:InxiFrontend.InxiHardwareType.Battery
-  fullName: InxiFrontend.InxiHardwareType.Battery
-  nameWithType: InxiHardwareType.Battery
 - uid: InxiFrontend.InxiHardwareType.BIOS
   name: BIOS
   href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_BIOS
   commentId: F:InxiFrontend.InxiHardwareType.BIOS
   fullName: InxiFrontend.InxiHardwareType.BIOS
   nameWithType: InxiHardwareType.BIOS
+- uid: InxiFrontend.InxiHardwareType.Battery
+  name: Battery
+  href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_Battery
+  commentId: F:InxiFrontend.InxiHardwareType.Battery
+  fullName: InxiFrontend.InxiHardwareType.Battery
+  nameWithType: InxiHardwareType.Battery
 - uid: InxiFrontend.InxiHardwareType.Graphics
   name: Graphics
   href: api/InxiFrontend.InxiHardwareType.html#InxiFrontend_InxiHardwareType_Graphics
@@ -1000,6 +1018,43 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.Network.State
   nameWithType: Network.State
+- uid: InxiFrontend.PCMemory
+  name: PCMemory
+  href: api/InxiFrontend.PCMemory.html
+  commentId: T:InxiFrontend.PCMemory
+  fullName: InxiFrontend.PCMemory
+  nameWithType: PCMemory
+- uid: InxiFrontend.PCMemory.FreeMemory
+  name: FreeMemory
+  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_FreeMemory
+  commentId: F:InxiFrontend.PCMemory.FreeMemory
+  fullName: InxiFrontend.PCMemory.FreeMemory
+  nameWithType: PCMemory.FreeMemory
+- uid: InxiFrontend.PCMemory.Name
+  name: Name
+  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_Name
+  commentId: P:InxiFrontend.PCMemory.Name
+  fullName: InxiFrontend.PCMemory.Name
+  nameWithType: PCMemory.Name
+- uid: InxiFrontend.PCMemory.Name*
+  name: Name
+  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_Name_
+  commentId: Overload:InxiFrontend.PCMemory.Name
+  isSpec: "True"
+  fullName: InxiFrontend.PCMemory.Name
+  nameWithType: PCMemory.Name
+- uid: InxiFrontend.PCMemory.TotalMemory
+  name: TotalMemory
+  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_TotalMemory
+  commentId: F:InxiFrontend.PCMemory.TotalMemory
+  fullName: InxiFrontend.PCMemory.TotalMemory
+  nameWithType: PCMemory.TotalMemory
+- uid: InxiFrontend.PCMemory.UsedMemory
+  name: UsedMemory
+  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_UsedMemory
+  commentId: F:InxiFrontend.PCMemory.UsedMemory
+  fullName: InxiFrontend.PCMemory.UsedMemory
+  nameWithType: PCMemory.UsedMemory
 - uid: InxiFrontend.Partition
   name: Partition
   href: api/InxiFrontend.Partition.html
@@ -1071,43 +1126,6 @@ references:
   isSpec: "True"
   fullName: InxiFrontend.Partition.Used
   nameWithType: Partition.Used
-- uid: InxiFrontend.PCMemory
-  name: PCMemory
-  href: api/InxiFrontend.PCMemory.html
-  commentId: T:InxiFrontend.PCMemory
-  fullName: InxiFrontend.PCMemory
-  nameWithType: PCMemory
-- uid: InxiFrontend.PCMemory.FreeMemory
-  name: FreeMemory
-  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_FreeMemory
-  commentId: F:InxiFrontend.PCMemory.FreeMemory
-  fullName: InxiFrontend.PCMemory.FreeMemory
-  nameWithType: PCMemory.FreeMemory
-- uid: InxiFrontend.PCMemory.Name
-  name: Name
-  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_Name
-  commentId: P:InxiFrontend.PCMemory.Name
-  fullName: InxiFrontend.PCMemory.Name
-  nameWithType: PCMemory.Name
-- uid: InxiFrontend.PCMemory.Name*
-  name: Name
-  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_Name_
-  commentId: Overload:InxiFrontend.PCMemory.Name
-  isSpec: "True"
-  fullName: InxiFrontend.PCMemory.Name
-  nameWithType: PCMemory.Name
-- uid: InxiFrontend.PCMemory.TotalMemory
-  name: TotalMemory
-  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_TotalMemory
-  commentId: F:InxiFrontend.PCMemory.TotalMemory
-  fullName: InxiFrontend.PCMemory.TotalMemory
-  nameWithType: PCMemory.TotalMemory
-- uid: InxiFrontend.PCMemory.UsedMemory
-  name: UsedMemory
-  href: api/InxiFrontend.PCMemory.html#InxiFrontend_PCMemory_UsedMemory
-  commentId: F:InxiFrontend.PCMemory.UsedMemory
-  fullName: InxiFrontend.PCMemory.UsedMemory
-  nameWithType: PCMemory.UsedMemory
 - uid: InxiFrontend.Processor
   name: Processor
   href: api/InxiFrontend.Processor.html

@@ -12,19 +12,16 @@
         "resource": {
           "relative_path": "index.json"
         }
-      },
-      "is_incremental": false
+      }
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/InxiFrontend.BIOS.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.BIOS.html",
-          "hash": "PzQv0GEjmnilIGTFg0Tey6SsqynmCBAkj1GBeOttrrQ="
+          "relative_path": "api/InxiFrontend.BIOS.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -32,11 +29,9 @@
       "source_relative_path": "api/InxiFrontend.Battery.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Battery.html",
-          "hash": "gebUSCa2GHz2mxydecrv5jZp+VhwYO/5GWJLXV99n+s="
+          "relative_path": "api/InxiFrontend.Battery.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -44,11 +39,9 @@
       "source_relative_path": "api/InxiFrontend.Graphics.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Graphics.html",
-          "hash": "YYnRyja1uhs8kuxB4eTFtbvuyew4TYL9K/p7IxyWmNo="
+          "relative_path": "api/InxiFrontend.Graphics.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,11 +49,9 @@
       "source_relative_path": "api/InxiFrontend.HardDrive.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.HardDrive.html",
-          "hash": "lEy7tz3UxiaC+tYMxJYDsz9y2PYlNWb462i//ycWh6Q="
+          "relative_path": "api/InxiFrontend.HardDrive.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -68,11 +59,9 @@
       "source_relative_path": "api/InxiFrontend.HardwareBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.HardwareBase.html",
-          "hash": "/2ASKrPa5En5ShSudqdZmniHmH8c13KAtvT7zT2fwZI="
+          "relative_path": "api/InxiFrontend.HardwareBase.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -80,11 +69,9 @@
       "source_relative_path": "api/InxiFrontend.HardwareInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.HardwareInfo.html",
-          "hash": "Rmmq/KDL6oD3IDwS4FoIn9aMvo5Qd2UqKOKM5NwbrVM="
+          "relative_path": "api/InxiFrontend.HardwareInfo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -92,11 +79,9 @@
       "source_relative_path": "api/InxiFrontend.HardwareParserBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.HardwareParserBase.html",
-          "hash": "feFC7JPtydWp45XsJmjGNMcxMIJnLHM/Pn9RhgJ0Iv4="
+          "relative_path": "api/InxiFrontend.HardwareParserBase.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -104,11 +89,9 @@
       "source_relative_path": "api/InxiFrontend.IHardwareParser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.IHardwareParser.html",
-          "hash": "dh+WLGghSAu/WcMeOsYFg7sqwsdb1/D02IWHc6Hhl18="
+          "relative_path": "api/InxiFrontend.IHardwareParser.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -116,11 +99,9 @@
       "source_relative_path": "api/InxiFrontend.Inxi.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Inxi.html",
-          "hash": "3VAMJC89CJzgxcCESsKKBnMAhENP9yDBTWhbe46RHEQ="
+          "relative_path": "api/InxiFrontend.Inxi.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -128,11 +109,9 @@
       "source_relative_path": "api/InxiFrontend.InxiHardwareType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.InxiHardwareType.html",
-          "hash": "tqFVeM3np869mcJEoebdAuVxVX8ynA+a7IZ8XnyVoQQ="
+          "relative_path": "api/InxiFrontend.InxiHardwareType.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -140,11 +119,9 @@
       "source_relative_path": "api/InxiFrontend.InxiTrace.DebugDataReceivedEventHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.InxiTrace.DebugDataReceivedEventHandler.html",
-          "hash": "0T1KE6FRlQ/v6gACP6N9OvCQevs0sd5q1VL8WIuip/A="
+          "relative_path": "api/InxiFrontend.InxiTrace.DebugDataReceivedEventHandler.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -152,11 +129,9 @@
       "source_relative_path": "api/InxiFrontend.InxiTrace.HardwareParsedEventHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.InxiTrace.HardwareParsedEventHandler.html",
-          "hash": "Yf2cMEPmaM7H+17IyemnP+NMFERTfr2tMG1BkIN0c84="
+          "relative_path": "api/InxiFrontend.InxiTrace.HardwareParsedEventHandler.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -164,11 +139,9 @@
       "source_relative_path": "api/InxiFrontend.InxiTrace.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.InxiTrace.html",
-          "hash": "cKUNh7Azj3aOZhwf78oQx5u7abO6vI+Dpc+ej8sf5TU="
+          "relative_path": "api/InxiFrontend.InxiTrace.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -176,11 +149,9 @@
       "source_relative_path": "api/InxiFrontend.MachineInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.MachineInfo.html",
-          "hash": "7E25KM7MajCugxkr404yIEXv3uoLl+2u1d4v8+SFZtY="
+          "relative_path": "api/InxiFrontend.MachineInfo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -188,11 +159,9 @@
       "source_relative_path": "api/InxiFrontend.Network.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Network.html",
-          "hash": "fmFRz49MItgBw/VSARoMg+mBQNiBwh9vlxWtp/ZklIk="
+          "relative_path": "api/InxiFrontend.Network.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -200,11 +169,9 @@
       "source_relative_path": "api/InxiFrontend.PCMemory.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.PCMemory.html",
-          "hash": "acE0FR5AlcO+ZeJP1c10wK5chyUhwEevO8eWthJRSwY="
+          "relative_path": "api/InxiFrontend.PCMemory.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -212,11 +179,9 @@
       "source_relative_path": "api/InxiFrontend.Partition.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Partition.html",
-          "hash": "BqdY5d8bqI4r7vr0vzbgx7IPnEmTBNE4vRxZXfem5pY="
+          "relative_path": "api/InxiFrontend.Partition.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -224,11 +189,9 @@
       "source_relative_path": "api/InxiFrontend.Processor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Processor.html",
-          "hash": "BMgftUO2WlZqKHVN59aTQ+qVxE2cqzSDIxUbu7tqejA="
+          "relative_path": "api/InxiFrontend.Processor.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -236,11 +199,9 @@
       "source_relative_path": "api/InxiFrontend.Sound.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.Sound.html",
-          "hash": "PiQqXcQr3N96+BQ1wHDZvAqcyEzrAnegVgN1ztxD7R0="
+          "relative_path": "api/InxiFrontend.Sound.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -248,11 +209,9 @@
       "source_relative_path": "api/InxiFrontend.SystemInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.SystemInfo.html",
-          "hash": "VxC+JLZNUL9asnCHpSXRx0QrYyt7thDlyh//3C3kRAs="
+          "relative_path": "api/InxiFrontend.SystemInfo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -260,11 +219,9 @@
       "source_relative_path": "api/InxiFrontend.WindowsLogicalPartition.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.WindowsLogicalPartition.html",
-          "hash": "E9aeTRfIhG2srwfswmD15JFhdMEKcY29WuuQu/4x5GA="
+          "relative_path": "api/InxiFrontend.WindowsLogicalPartition.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -272,11 +229,9 @@
       "source_relative_path": "api/InxiFrontend.yml",
       "output": {
         ".html": {
-          "relative_path": "api/InxiFrontend.html",
-          "hash": "x/hOtePJijQNM8boTqw93m4N+kSt8ZLtXKM/WDVDMBk="
+          "relative_path": "api/InxiFrontend.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -284,11 +239,9 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "fZNcr3Uyfu2JW/cWWpDDf6Psz3BnvBCagVqOutYwICE="
+          "relative_path": "api/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -296,11 +249,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "LuPQED9A3odzWpLfB7M786L0XonVUhcN9mehrgPAx+k="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -308,11 +259,9 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "z50HZOGo5q7ZxDnOJ2sUcN/9eLexkFldFeCdipZd0Rc="
+          "relative_path": "toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -320,11 +269,9 @@
       "source_relative_path": "wiki/Home.md",
       "output": {
         ".html": {
-          "relative_path": "wiki/Home.html",
-          "hash": "oGZlddOEI8owWt5ivCM1F/TEMLt048wJc7Btdod/ydM="
+          "relative_path": "wiki/Home.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -332,55 +279,10 @@
       "source_relative_path": "wiki/toc.md",
       "output": {
         ".html": {
-          "relative_path": "wiki/toc.html",
-          "hash": "8XhClbHlTgh1+ZSX9+c3vPIRpyjSJs6z0ejeP9oVS1M="
+          "relative_path": "wiki/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
-    }
-  ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 2,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 22,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
     }
   ],
   "version_info": {},
