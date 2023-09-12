@@ -16,8 +16,8 @@ fi
 
 # Pack binary
 echo Packing binary...
-"$rarpath" a -ep1 -r -m5 /tmp/$version-bin.rar "../Inxi.NET/bin/$releaseconf/netstandard2.0/"
-"$rarpath" a -ep1 -r -m5 /tmp/$version-demo.rar "../Inxi.NET.ConsoleTest/bin/$releaseconf/net6.0/"
+"$rarpath" a -ep1 -r -m5 /tmp/$version-bin.rar "../Inxi.NET.Bin/netstandard2.0/"
+"$rarpath" a -ep1 -r -m5 /tmp/$version-demo.rar "../Inxi.NET.ConsoleTest.Bin/net6.0/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
