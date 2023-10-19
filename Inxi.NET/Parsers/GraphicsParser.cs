@@ -122,7 +122,7 @@ namespace InxiFrontend
                     {
                         GPUName = (string)GraphicsDict["spdisplays_device-id"].ToObject();
                         GPUChipID = (string)GraphicsDict["spdisplays_vendor-id"].ToObject();
-                        InxiTrace.Debug("Got information. GPUName: {0}, GPUChipID: {1}", GPUName);
+                        InxiTrace.Debug("Got information. GPUName: {0}, GPUChipID: {1}", GPUName, GPUChipID);
 
                         // Create an instance of graphics class
                         GPU = new Graphics(GPUName, "", "", GPUChipID, "");
