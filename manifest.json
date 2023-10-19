@@ -2,7 +2,6 @@
   "sitemap": {
     "baseUrl": "https://aptivi.github.io/Inxi.NET/"
   },
-  "homepages": [],
   "source_base_path": "/github/workspace/DocGen",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -285,7 +284,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
